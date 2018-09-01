@@ -1,0 +1,11 @@
+<apex:page controller="wpclass_two_objs">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!wrapper}" var="w">
+            <apex:column value="{!w.a.name}" headerValue="Account Name"/>
+            <apex:column value="{!w.emp.name}" headerValue="Employee Name"/>
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+</apex:form>
+ </apex:page>

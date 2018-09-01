@@ -1,0 +1,7 @@
+<apex:page standardController="account" recordSetVar="a" >
+<apex:form >
+
+     <apex:inputField value="{!account.name}"/>
+ 
+</apex:form>
+</apex:page>

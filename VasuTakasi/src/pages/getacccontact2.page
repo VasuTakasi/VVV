@@ -1,0 +1,14 @@
+<apex:page sidebar="false" showHeader="false" controller="userepete">
+  <apex:form style="color:red; background-color:blue">
+   <apex:pageBlock >
+    <apex:repeat value="{!records}" var="r">
+     {!r.name}
+         <apex:pageBlock title="contacts" >
+       <apex:repeat value="{!r.contacts}" var="rc">
+   <p>  {!rc.name   }</p>
+    </apex:repeat>
+  </apex:pageBlock>
+ </apex:repeat>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

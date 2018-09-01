@@ -1,0 +1,24 @@
+<apex:page controller="PopupTest">
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:sectionHeader title="account records" subtitle="onmouseover"/>  
+ 
+    <apex:repeat value="{!accounts}" var="acc">
+                             
+              
+    <ul><li> <a href="/{!acc.Id}" id="{!acc.Id}" onblur="LookupHoverDetail.getHover('{!acc.Id}').hide();" onfocus="LookupHoverDetail.getHover('{!acc.Id}', '/{!acc.Id}/m?retURL=%2F{!acc.Id}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!acc.Id}').hide();" onmouseover="LookupHoverDetail.getHover('{!acc.Id}', '/{!acc.Id}/m?retURL=%2F{!acc.Id}&isAjaxRequest=1').show();">{!acc.Name} </a></li>  </ul>    
+     
+    </apex:repeat> 
+    <apex:sectionHeader title="contact"/>
+    <apex:pageBlockTable value="{!contact}" var="acc">
+    
+    <apex:column >                                  
+            
+     <a href="/{!acc.Id}" id="{!acc.Id}" onblur="LookupHoverDetail.getHover('{!acc.Id}').hide();" onfocus="LookupHoverDetail.getHover('{!acc.Id}', '/{!acc.Id}/m?retURL=%2F{!acc.Id}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!acc.Id}').hide();" onmouseover="LookupHoverDetail.getHover('{!acc.Id}', '/{!acc.Id}/m?retURL=%2F{!acc.Id}&isAjaxRequest=1').show();">{!acc.Name} </a> 
+   
+    </apex:column>
+    </apex:pageBlockTable>   
+
+</apex:pageBlockSection>
+</apex:pageBlock>  
+</apex:page>

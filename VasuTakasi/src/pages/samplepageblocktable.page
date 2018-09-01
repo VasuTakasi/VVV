@@ -1,0 +1,9 @@
+<apex:page controller="pageblocktable">
+    <apex:pageBlock >
+        <apex:pageblockTable value="{!records}" var="r">
+        <apex:column headerValue="name" style="color:blue">
+            {!r.name}
+        </apex:column>    
+        </apex:pageblockTable>
+    </apex:pageBlock>
+</apex:page>

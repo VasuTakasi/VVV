@@ -1,0 +1,9 @@
+<apex:page controller="multipicklists" >
+   <apex:form >
+         <apex:pageBlock >
+             <apex:selectList value="{!selected_options}" >
+                 <apex:selectOptions value="{!con_fields}"></apex:selectOptions>
+             </apex:selectList>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page Controller="onblur">
+ <apex:form >
+  <apex:pageMessages ></apex:pageMessages>
+     <apex:pageBlock >
+       <apex:pageblockSection >
+         <apex:inputField value="{!acc.name}"/>
+         <apex:inputField value="{!acc.phone}"/>
+       </apex:pageblockSection>  
+       <apex:commandButton value="Save" action="{!saveacc}"/>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

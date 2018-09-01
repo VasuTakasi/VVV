@@ -1,0 +1,5 @@
+<apex:page >
+
+    <c:inputfile_component objId="{!$CurrentPage.Parameters.id}"/> 
+
+</apex:page>

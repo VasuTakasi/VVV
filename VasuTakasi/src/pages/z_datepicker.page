@@ -1,0 +1,16 @@
+<apex:page controller="DatePickerDEmo2">
+<apex:form id="myForm">
+<script>
+                       function DynamicDatePicker(d_id)
+                       {
+                       
+                         DatePicker.pickDate(false,d_id.id,false);
+                       }
+</script>
+<table>
+<tr><td>DatePicker From JavaScript</td><td><apex:inputText value="{!d_date_str}" id="t" onfocus="DynamicDatePicker(this);" onchange="checkDateFormatt(this.id);" size="20" disabled="false" style="width:150px;"/></td></tr>
+<tr><td>DatePicker From Input Field</td><td><apex:inputField value="{!c.Birthdate}"/></td></tr>
+</table>
+</apex:form>
+
+</apex:page>

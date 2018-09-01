@@ -1,0 +1,32 @@
+<apex:page showHeader="false">
+ 
+
+<style type="text/css">
+body{ font-family:Verdana, Arial, serif; font-size:14px;}
+</style>
+
+<apex:includeScript value="{!$Resource.jq_tooltip}"/>
+<!--<apex:includeScript value="{!$Resource.jquery_150}"/>-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+
+<script type="text/javascript">
+$(function()
+{
+    $('#link_example').qtip({content:'A simple tooltip for the link<div 
+
+style="width:200px;height:400px;border-style:solid;"></div>',
+ 
+style: {name: 'dark', tip: 'leftMiddle'} });
+});
+</script>
+
+
+
+<body>
+
+<a href='#' id="link_example" >Simple tooltip</a>
+
+
+</body>
+
+</apex:page>

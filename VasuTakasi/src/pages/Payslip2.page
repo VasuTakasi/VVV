@@ -1,0 +1,168 @@
+<apex:page tabStyle="Account" sidebar="false" showHeader="false" renderAs="pdf" controller="PaySlipController"> 
+    <apex:form style="font-size: 14px;">
+    <center> 
+        <apex:image value="{!$Resource.BiznusSoft}" width="50%"/> 
+    </center>
+    <apex:pageBlock >   
+        <center>  
+            <apex:panelGrid columns="1" rules="rows" width="100%">
+        </apex:panelGrid> 
+          <h3>  Payslip for the month of July 2015 </h3>
+           </center>
+       
+            <apex:pageBlockSection title="Employee Information" columns="1">
+                <table style="width:700px;border-top:1px solid;border-bottom:1px solid;">
+                    <tr>
+                        <td >
+                            <label >Name</label>
+                            
+                        </td>
+                        <td>
+                            <label >: &nbsp; Vasu Takasi</label>
+                        </td>
+                        
+                        <td>
+                            <label >Designation</label>                            
+                        </td>
+                        <td>
+                            <label style="">: &nbsp;  Senior Salesforce Developer</label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td >
+                            <label >Employee Id</label>
+                            
+                        </td>
+                        <td>
+                            <label >: &nbsp;  BZS023</label>
+                        </td>
+                        
+                        <td>
+                            <label >PAN Number </label>                            
+                        </td>
+                        <td>
+                            <label style="">: &nbsp;  AMDPT8016G</label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td >
+                            <label >Bank Name</label>
+                            
+                        </td>
+                        <td>
+                            <label >: &nbsp;  HDFC</label>
+                        </td>
+                        
+                        <td>
+                            <label >Bank Account Number </label>                            
+                        </td>
+                        <td>
+                            <label style="">: &nbsp;  50100070292501</label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td >
+                            <label >Total Days </label>
+                            
+                        </td>
+                        <td>
+                            <label >: &nbsp;  31</label>
+                        </td>
+                        
+                        <td>
+                            <label >Paid Days </label>                            
+                        </td>
+                        <td>
+                            <label style="">: &nbsp; 19</label>
+                        </td>
+                    </tr>
+                </table>
+            
+            </apex:pageBlockSection>
+        <br/><br/><br/>
+        
+    <table  border="1" width="350px" cellpadding="5"  style="float:left; border:1px #8c92ac; border-collapse:collapse;border:1px White solid;">
+        <tr style="color:blue" >       
+            <th> EARNINGS</th>
+            <th> RUPEES </th>
+        </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>Basic Salary </td> 
+        <td> <apex:outputText value="19,000.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>Conveyance</td> 
+        <td> <apex:outputText value="1,600.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>Transport</td> 
+        <td> <apex:outputText value="2,000.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>Medical</td> 
+        <td> <apex:outputText value="1,250.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>HRA</td> 
+        <td> <apex:outputText value="7,600.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>Telephone</td> 
+        <td> <apex:outputText value="2,000.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>Special Allowance</td> 
+        <td> <apex:outputText value="21,217.00"/> </td>
+    </tr>
+    <tr style="border:0px White solid; color:black;">
+        <td>LTA</td> 
+        <td> <apex:outputText value="1,583.00"/> </td>
+    </tr>
+    <tr style="color:black">
+    <td><b> Gross Salary</b> </td>
+    <td><b><apex:outputText value="56,250.00"/></b></td>
+    </tr>
+</table>
+
+<table  border="1" width="350px" cellpadding="5" style="float:right; border:1px #8c92ac; border-collapse:collapse;border:1px White solid;" >
+    <tr style="color:blue">       
+        <th> DEDUCTIONS</th>
+        <th> RUPEES </th>
+    </tr>
+    <tr style="border:1px White solid; color:black;">
+        <td>Professional Tax</td>
+        <td><apex:outputText value="200.00"/></td>
+    </tr>
+    <tr>
+    <td> Income Tax</td>
+     <td><apex:outputText value="1,254.00"/></td>
+    </tr>
+     <tr>
+     <td>Provident Fund</td>
+     <td><apex:outputText value="0.00"/></td>
+     </tr>
+    <tr style="color:black">
+
+    <td><b>Total Deductions</b></td>
+    <td><b>23,228.00</b></td>
+    </tr>
+    <tr style="color:red">
+
+    <td><b>Net Salary</b></td>
+    <td><b><apex:outputText value="33,022.00"/></b></td>
+    </tr>
+ </table> 
+
+<br/>
+<br/>
+ <table border="0" width="704px" cellpadding="5"  style="float:left; border:1px #8c92ac; border-collapse:collapse;border:1px White solid;">
+    <tr align="center"> 
+    <td>This is a system generated payslip and does not require signature*</td>
+    </tr>
+</table>
+</apex:pageBlock>      
+  </apex:form>
+</apex:page>

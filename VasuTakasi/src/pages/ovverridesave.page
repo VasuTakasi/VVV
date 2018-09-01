@@ -1,0 +1,21 @@
+<apex:page standardController="Employee__c" extensions="ovverridesave" >
+  <apex:form >
+      <apex:commandLink value="shape" shape="circle" />
+      <apex:outputPanel id="lout">
+   <apex:PageBlock >
+
+    <apex:pageBlockSection columns="1">
+    
+     <apex:inputField value="{!Employee__c.name}" id="pout"/>
+     <apex:inputField value="{!Employee__c.Phone__c}" id="out"/>
+  
+    </apex:pageBlockSection>
+   </apex:PageBlock>
+  
+   </apex:outputPanel>
+   <apex:pageBlock >
+    <apex:commandButton value="Save" action="{!saverecord}" reRender="out"/>
+   </apex:pageBlock>
+       
+  </apex:form>
+</apex:page>

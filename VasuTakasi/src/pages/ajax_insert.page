@@ -1,0 +1,29 @@
+<apex:page id="p">
+   <script src="/soap/ajax/18.0/connection.js"></script>
+    <script type="text/javascript">
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+        function save()
+        {
+            var name=document.getElementById('p:f1:pb:pbs:name').value;
+           // alert(name);
+            var phone=document.getElementById('p:f1:pb:pbs:phone').value;
+             var acc = new sforce.SObject("Account");
+            
+            acc.Name = name;
+            acc.Phone =phone;
+            sforce.connection.create([acc]);
+            alert('sucess');
+            document.getElementById('p:f1:pb:pbs:name').value='';
+            document.getElementById('p:f1:pb:pbs:phone').value='';
+        }
+    </script>
+    <apex:form id="f1">
+      <apex:pageBlock id="pb" >
+        <apex:pageBlockSection columns="1" id="pbs">
+             <apex:inputText label="name" id="name"/>
+             <apex:inputText label="phone" id="phone"/>
+            <input type="button" value="Save" onclick="save()"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

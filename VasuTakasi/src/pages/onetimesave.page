@@ -1,0 +1,21 @@
+<apex:page controller="onetimesave" id="p1" tabStyle="Student__c">
+    <script type="text/javascript">
+        function disablebtn(btn)
+        {
+            //alert(btn);
+            btn.disabled=true;
+            //doucument.getElementById('p1:f1:pb:btn').disabled=true;
+        }
+    </script>
+  <apex:form id="f1">
+      <apex:pageblock id="pb">
+      <apex:commandButton value="disable" onclick="disablebtn(this)" id="btn"/>
+        <apex:pageblockSection columns="1">
+          <apex:inputField value="{!std.name}"/>
+          <apex:inputField value="{!std.Course_Name__c}"/>
+          <apex:inputField value="{!std.Technologies__c}"/>
+        </apex:pageblockSection>  
+        <apex:commandButton value="{!btn_label}" onclick="disablebtn(this)"  action="{!saverecord}" reRender="f1"/>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

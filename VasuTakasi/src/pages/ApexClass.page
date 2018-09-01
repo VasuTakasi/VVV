@@ -1,0 +1,17 @@
+<apex:page controller="ApexClass">
+    <apex:form >
+        <apex:outputText >{!AcName}</apex:outputText>
+        <apex:pageBlock >
+        
+            <apex:pageblockSection >
+                <apex:pageBlockTable value="{!AcList}" var="A">
+                    <apex:column value="{!A.Name}"/>
+                    <apex:column value="{!A.phone}"/>                    
+                </apex:pageBlockTable>
+                <apex:pageBlockTable value="{!AccNameset}" var="A">
+                    <apex:column value="{!A}"/>
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

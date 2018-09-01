@@ -1,0 +1,22 @@
+<apex:page controller="web_to_contact" sidebar="false">
+ <apex:form style="background-color:#D8D8D8">
+     <table align="center" style="background-color:#E0F8E0">
+         <th><td><h3>Web To Contact</h3></td></th>
+         <tr>
+             <td>First Name</td><td><input type="text" name="firstname"/></td>
+         </tr>
+          <tr>
+             <td>Last Name</td><td><input type="text" name="LastName"/></td>
+         </tr>
+          <tr>
+             <td>Phone</td><td><input type="text" name="phone"/></td>
+         </tr>
+          <tr>
+             <td>Email</td><td><input type="text" name="email"/></td>
+         </tr>
+          <tr>
+             <td><apex:commandButton value="convert" action="{!convert}"/></td>
+         </tr>
+     </table>
+ </apex:form>
+</apex:page>

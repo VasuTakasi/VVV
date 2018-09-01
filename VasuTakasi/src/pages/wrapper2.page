@@ -1,0 +1,19 @@
+<apex:page sidebar="false" controller="wrapper2">
+<apex:form >
+  <apex:image value="{!$Resource.img}" width="100" height="400" rendered="false"/>
+  <apex:pageBlock >
+      <apex:pageBlockTable value="{!filltable}" var="ft">
+          <apex:column headerValue="Action">
+              <apex:inputCheckbox value="{!ft.ischecked}" />
+          </apex:column>
+          <apex:column headerValue="Name">
+                {!ft.emps.name}
+          </apex:column>
+          <apex:column headerValue="Phone">
+              {!ft.emps.Phone__c}
+          </apex:column>
+      </apex:pageBlockTable>
+         
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

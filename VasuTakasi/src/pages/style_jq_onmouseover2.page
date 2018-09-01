@@ -1,0 +1,100 @@
+<apex:page standardController="account" recordSetVar="acc" extensions="jq" showHeader="false">
+<apex:form id="f1">
+   <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        //background: #000 url(bg-texture.png) repeat;
+        color: #dddddd;
+      }
+      
+      h1, h3 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+      }
+      
+      a {
+        color: #EB067B;
+      }
+      
+      div#container {
+        width: 580px;
+        margin: 100px auto 0 auto;
+        padding: 20px;
+        background: #000;
+        border: 1px solid #1a1a1a;
+        margin: 0px 0px 0px 0px;
+      }
+      
+      /* HOVER STYLES */
+      div#pop-up {
+        display: none;
+        position: absolute;
+        width: 280px;
+        padding: 10px;
+        background: #eeeeee;
+        color: #000000;
+        border: 1px solid #1a1a1a;
+        font-size: 90%;
+        margin: 0px 0px 0px 0px;
+      }
+    </style>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+   <!-- <apex:includeScript value="{!$Resource.jquery_150}"/>-->
+    <script type="text/javascript">
+      $(function() {
+        var moveLeft = 20;
+        var moveDown = 10;
+        
+        $('a#mylink').hover(function(e) {
+          $('div#pop-up').show();
+          //.css('top', e.pageY + moveDown)
+          //.css('left', e.pageX + moveLeft)
+          //.appendTo('body');
+        }, function() {
+          $('div#pop-up').hide();
+        });
+        
+        $('a#mylink').mousemove(function(e)
+         {
+          $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+        });
+        
+      });
+    </script>
+
+   <apex:pageblock id="pb">
+            <apex:pageblockTable value="{!acc}" var="a" >
+                <apex:column headerValue="Name">
+               <apex:actionSupport event="onmouseover" action="{!details}" reRender="pb1">
+                 <a href="#" id="mylink">
+                   {!a.name}
+                <apex:param id="aid" name="aid" value="{!a.id}" assignTo="{!aid}"/>
+                    </a>
+                   </apex:actionSupport>
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:commandButton value=">>" action="{!Next}"  reRender="f1"  />
+             <apex:commandButton value="<<" action="{!Previous}" reRender="f1" />
+             </apex:pageblock>
+        </apex:form>
+      <div id="pop-up" style="margin: 0px 0px 0px 0px;">
+       <apex:form >       
+         <apex:pageblock id="pb1" >
+         <apex:sectionHeader title="Contacts"/>
+          <apex:pageblockTable value="{!accs}" var="ac" rendered="{!(accs.size!=0)}">
+            <apex:column value="{!ac.name}"/>
+            <apex:column value="{!ac.phone}"/>
+          </apex:pageblockTable>
+          <apex:outputText rendered="{!(accs.size=0)}">No Contacts To Display</apex:outputText>
+         </apex:pageblock>
+          </apex:form>
+ <!--    <apex:image value="{!$Resource.red_rose}" />  -->
+               
+      </div>
+      
+    
+    
+</apex:page>

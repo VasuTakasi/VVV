@@ -1,0 +1,16 @@
+<apex:page controller="controlerpagenation">
+  <apex:form id="f1">
+      <apex:pageBlock >
+          <apex:pageblockTable value="{!records}" var="r">
+              <apex:column value="{!r.name}" headerValue="Name"/>
+              <apex:column value="{!r.Phone__c}" headerValue="Phone"/>
+          </apex:pageblockTable>
+      </apex:pageBlock>
+      <apex:panelGrid columns="4">
+    <apex:commandLink action="{!first}" reRender="f1">First</apex:commandlink>
+    <apex:commandLink action="{!previous}" rendered="{!hasPrevious}" reRender="f1">Previous</apex:commandlink>
+    <apex:commandLink action="{!next}" rendered="{!hasNext}" reRender="f1">Next</apex:commandlink>
+    <apex:commandLink action="{!last}" reRender="f1">Last</apex:commandlink>
+    </apex:panelGrid>
+  </apex:form>
+</apex:page>

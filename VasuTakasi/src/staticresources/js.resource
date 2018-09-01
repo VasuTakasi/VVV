@@ -1,0 +1,4 @@
+function vvv()
+{
+alert("wow............!");
+}

@@ -1,0 +1,21 @@
+<apex:page >
+    <script>
+        function clickMe()
+        {
+            //parent.window.documnet.getElementById('myBtn').click();
+            var myExternalEvent;
+            if(window.opener.$A &&
+              (myExternalEvent = window.opener.$A.get("e.c:AddRowEvent"))) {
+                 myExternalEvent.setParams({isOauthed:true});
+                 myExternalEvent.fire();
+               }
+        }
+    </script>
+<div>
+    <apex:form >
+        <apex:pageBlock >
+            <input type="button" value="Click Me" onclick="clickMe();return false;" />
+        </apex:pageBlock>
+    </apex:form>
+</div>
+</apex:page>

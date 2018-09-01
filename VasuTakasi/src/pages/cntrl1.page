@@ -1,0 +1,12 @@
+<apex:page controller="updt" >
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection title="{!account}" >
+<apex:inputField value="{!account.name}"/>
+<apex:inputField value="{!account.accountnumber}"/>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+<apex:commandButton action="{!save}" value="update"/>
+ </apex:form>
+</apex:page>

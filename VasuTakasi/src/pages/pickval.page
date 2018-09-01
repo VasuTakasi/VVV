@@ -1,0 +1,17 @@
+<apex:page standardController="account" >
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection title="Section 1" rendered="{!account.SLA__c=='Gold'}" columns="1">
+              <apex:outputField value="{!account.name}"/>
+              <apex:outputField value="{!account.phone}"/>
+              <apex:inputField value="{!account.SLA__c}"/>
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Section 2" rendered="{!account.SLA__c=='Silver'}" columns="1" >
+              <apex:outputField value="{!account.billingcity}"/>
+               <apex:outputField value="{!account.billingstreet}"/>
+               <apex:inputField value="{!account.SLA__c}"/>
+
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

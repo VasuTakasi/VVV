@@ -1,0 +1,6 @@
+<apex:page standardController="account" extensions="mystndcntrl">
+  {!greetings};
+  <apex:form >
+  <apex:inputField value="{!account.name}"/>
+  </apex:form>
+</apex:page>

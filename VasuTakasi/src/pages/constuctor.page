@@ -1,0 +1,18 @@
+<apex:page controller="constr">
+      <apex:form >
+      <apex:pageBlock >
+           <apex:selectList size="1"  value="{!listoption}" multiselect="false">
+             <apex:actionSupport event="onchange" reRender="tb" />
+               <apex:selectOption itemValue="Engineering"></apex:selectOption>
+               <apex:selectOption itemValue="Agriculture"></apex:selectOption>
+               <apex:selectOption itemValue="Banking"></apex:selectOption>
+             </apex:selectList>
+                       
+              <apex:pageBlockTable value="{!accounts}" var="a" id="tb">
+                <apex:column value="{!a.name}"/>
+                 <apex:column value="{!a.phone}"/>
+                  <apex:column value="{!a.industry}"/>
+              </apex:pageBlockTable>
+          </apex:pageBlock>
+      </apex:form>
+</apex:page>

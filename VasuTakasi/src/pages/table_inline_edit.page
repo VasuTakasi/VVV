@@ -1,0 +1,35 @@
+<apex:page controller="table_inline_edit" id="p">
+<script>
+    function record(nam,phone)
+    {
+        //var n=document.getElementById('p:f:pb:pbt:2:nam').value;
+        
+       //var p=document.getElementById(phone).value;
+        alert(phone.id);
+        document.getElementById('p:f:iph').value='ll';
+       
+    }
+</script>
+
+  <apex:form id="f">
+  <apex:inputHidden value="{!record}" id="iph"/>
+      <apex:pageBlock id="pb">
+          <apex:pageBlockTable value="{!acclist}" var="acc" id="pbt">
+           <apex:inlineEditSupport event="onclick" showOnEdit="save"/>
+              <apex:column >
+                  <apex:commandLink value="Save" action="{!saverecord}" onclick="record('{!$Component.nam}','{!$Component.phone}')">
+                      <apex:param value="{!acc.id}" name="accid" assignTo="{!accid}"/>
+                  </apex:commandLink>
+               </apex:column>
+          
+                <apex:column value="{!acc.name}"  id="nam"/>
+               <apex:column >
+                  <apex:outputField value="{!acc.phone}">
+                      <apex:inlineEditSupport />
+                                          
+                  </apex:outputField> 
+               </apex:column>
+                </apex:pageBlockTable>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page sidebar="true" showHeader="false">
+  <apex:form >
+     <div style="margin:500px 40px auto 900px;width:100px;height:100px;background-color:#8FBC8F">
+         
+     </div>
+  </apex:form>
+</apex:page>

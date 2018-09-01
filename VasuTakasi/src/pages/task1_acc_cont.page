@@ -1,0 +1,17 @@
+<apex:page standardController="Junction_Cont_Camp__c" recordSetVar="jn">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Accounts">
+                <apex:pageBlockTable value="{!jn}" var="j">
+                    <apex:column value="{!j.account__r.name}"/>
+                    <apex:column value="{!j.account__r.phone}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contacts">
+                <apex:pageBlockTable value="{!jn}" var="j">
+                    <apex:column value="{!j.Contact__r.LastName}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

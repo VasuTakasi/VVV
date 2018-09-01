@@ -1,0 +1,15 @@
+<apex:page controller="change_listitem_position">
+     <apex:form id="f">
+         <apex:pageBlock >
+         <apex:panelGrid columns="2">
+             <apex:selectlist value="{!selecteditem}" >
+                 <apex:selectOptions value="{!items}"></apex:selectOptions>
+             </apex:selectlist>
+             <apex:panelGrid columns="1">
+             <apex:commandButton value="UP" action="{!moveup}" reRender="f" style="height:20px;" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwQRV7QPoyb82e0CAQy01r-Ie-n-SxAUW0QdDG9UFUaHTnY6Sn"/>
+              <apex:commandButton value="Down" action="{!movedown}" style="height:20px;" image="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS6hrHqsn7-vOLXRbchQKEyHHYbJaZFQ3HP16uChUOSuajoXGpAuQ" reRender="f"/>
+           </apex:panelGrid> 
+           </apex:panelGrid> 
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

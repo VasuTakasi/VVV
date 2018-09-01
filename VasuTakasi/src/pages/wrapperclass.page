@@ -1,0 +1,21 @@
+<apex:page sidebar="false" controller="wrapperclass">
+    <apex:form id="f1">
+        <apex:pageBlock >
+            <apex:commandButton value="Show Selection" action="{!go}" onclick="window.showModalDialog('/apex/demo20?id='+'{!s}')" />
+              <apex:pageBlockSection >
+                  <apex:pageBlockTable value="{!records}" var="r">
+                     <apex:column headerValue="Action">
+                        <apex:inputCheckbox value="{!r.ischecked}"/>
+                     </apex:column>
+                     <apex:column headerValue="Name">
+                        {!r.tname}
+                     </apex:column>
+                      <apex:column headerValue="City">
+                        {!r.tcity}
+                     </apex:column>
+                  </apex:pageBlockTable>
+              </apex:pageBlockSection>
+              <apex:commandButton value="select" action="{!go}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

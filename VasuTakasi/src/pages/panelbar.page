@@ -1,0 +1,13 @@
+<apex:page >
+<apex:form >
+    <apex:panelBar >
+
+        <apex:panelBarItem label="Item 1"><apex:commandButton value="55555" /></apex:panelBarItem>
+
+        <apex:panelBarItem label="Item 2">data 2</apex:panelBarItem>
+
+        <apex:panelBarItem label="Item 3">data 3</apex:panelBarItem>
+
+    </apex:panelBar>
+</apex:form>
+</apex:page>

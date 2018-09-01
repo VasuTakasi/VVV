@@ -1,0 +1,17 @@
+<apex:page standardController="contact" id="p1">
+<apex:form id="f1">
+  
+ 
+   <apex:pageBlock id="pb">
+    <apex:pageBlockSection columns="1">
+     <apex:inputField value="{!contact.lastname}"/>
+     <apex:inputField id="aa" value="{!contact.accountid}" >
+     <apex:actionSupport event="onchage"  />
+     </apex:inputField>
+     <apex:inputField value="{!contact.mailingstreet}"/>
+     <apex:param name="aid" value=""/>
+   </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form>
+
+</apex:page>

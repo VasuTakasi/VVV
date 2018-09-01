@@ -1,0 +1,52 @@
+<apex:page standardController="Employee__c" extensions="SendEmailAttachment">
+<script language="javascript" type="text/javascript">
+
+        function CloseWindow() {
+           
+             //this.parent.window.close();
+        }
+
+
+</script>
+   
+      <apex:form >
+        <apex:pageBlock >    
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Send" action="{!Send}" onclick="CloseWindow()"/>    
+            </apex:pageBlockButtons>     
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!InvRec.Name}"/>
+                <apex:outputField value="{!InvRec.Phone__c}"/>
+                
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputField value="{!Conid1.name}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputFile value="{!UploadDoc.body}" filename="{!UploadDoc.name}"/>
+                </apex:pageblockSectionItem>                
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputField value="{!Conid2.name}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputFile value="{!UploadDoc2.body}" filename="{!UploadDoc2.name}"/>
+                </apex:pageblockSectionItem>                
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputField value="{!Conid3.name}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputFile value="{!UploadDoc3.body}" filename="{!UploadDoc3.name}"/>
+                </apex:pageblockSectionItem>                
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputField value="{!Conid4.name}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Name: "/><apex:inputFile value="{!UploadDoc4.body}" filename="{!UploadDoc4.name}"/>
+                </apex:pageblockSectionItem>                
+                <apex:pageblockSectionItem >
+                    <apex:outputText value="Other Email id: "/><apex:inputTextarea value="{!Emailids}"/>
+                </apex:pageblockSectionItem>
+                          
+            </apex:pageBlockSection>                           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

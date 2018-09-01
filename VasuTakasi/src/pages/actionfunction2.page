@@ -1,0 +1,14 @@
+<apex:page controller="actionfunction2">
+  <apex:form id="f">
+      <apex:pageBlock >
+          <apex:selectList size="1" value="{!selected_value}" onchange="fucn()">
+              <apex:selectOption itemValue="Green" ></apex:selectOption>
+              <apex:selectOption itemValue="Blue" ></apex:selectOption>
+              <apex:selectOption itemValue="Red" ></apex:selectOption>
+              <apex:selectOption itemValue="Black" ></apex:selectOption>
+          </apex:selectList>
+          <apex:actionFunction name="fucn" id="fn" action="{!doaction}" reRender="f"/>
+          <apex:pageMessages ></apex:pageMessages>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

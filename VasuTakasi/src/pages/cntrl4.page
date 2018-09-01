@@ -1,0 +1,17 @@
+<apex:page controller="conts">
+<style>
+    .myheader
+    {
+        background-color:blue;
+        color:white;
+        
+    }
+</style>
+<apex:form >
+<apex:dataTable value="{!names}" var="n" border="1">
+<apex:column value="{!n.name}" breakBefore="true" style="color:blue;background-color:red;border-color:yellow;border-width:10px;" headerClass="myheader" ><apex:facet name="header">NAME </apex:facet></apex:column>
+<apex:column value="{!n.fax}" style="background-color:yellow;border-width:10px;border-color:yellow;" headerClass="myheader" headerValue="Fax" title="fax"  ></apex:column>
+</apex:dataTable>
+</apex:form>
+  
+</apex:page>

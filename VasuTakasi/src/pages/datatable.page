@@ -1,0 +1,23 @@
+<apex:page standardController="Employee__c" recordSetVar="emp">
+<apex:form >
+View:
+<apex:selectList value="{!filterid}" size="1" >
+
+<apex:selectOptions value="{!listviewoptions}"/>
+<apex:actionSupport event="onchange"  reRender="emp1"/>
+ </apex:selectList>
+
+<apex:dataTable value="{!emp}" var="e" border="2"  bgcolor="lightpink" id="emp1">
+<apex:column value="{!e.name}" >
+<apex:facet name="header" >Emp Nmae</apex:facet>
+</apex:column>
+<apex:column value="{!e.Phone__c}">
+<apex:facet name="header" >Phone</apex:facet>
+</apex:column>
+<apex:column >
+<apex:facet name="header">Country</apex:facet>
+<apex:inputField value="{!e.Country__c}"/></apex:column>
+</apex:dataTable> 
+<apex:commandButton action="{!save}" value="save"/>
+  </apex:form>
+</apex:page>

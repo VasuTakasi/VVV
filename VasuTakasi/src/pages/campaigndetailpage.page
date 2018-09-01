@@ -1,0 +1,70 @@
+<apex:page standardController="campaign" extensions="classcampaigndetailpage" sidebar="false">
+<style>
+.font
+{
+color:#00ff00;
+background-color:#6495ed;
+    text-align:center;
+}
+body{font-family:arial;}
+table{font-size:100%;background:white;width:50px;}
+a{color:black;text-decoration:none;font:bold}
+a:hover{color:#606060}
+td.menu{background:lightblue}
+table.menu
+{
+font-size:100%;
+position:absolute;
+visibility:hidden;
+}
+</style>
+    <script type="text/javascript">
+function showmenu(elmnt)
+{
+document.getElementById(elmnt).style.visibility="visible";
+}
+function hidemenu(elmnt)
+{
+document.getElementById(elmnt).style.visibility="hidden";
+}
+</script>
+    <apex:form >
+<div style="margin:auto auto auto auto;">   
+        <apex:pageBlock title="Campaign Details"  >
+           <div style="position:absolute;margin-top:2px;margin-left:220px;z-index:10;" >
+           <apex:commandlink value="Edit"   action="{!editing}" styleclass="font" />
+           <apex:param name="edc" value="{!campaign.id}" assignTo="{!camid}"/>
+           <apex:commandLink value="Delete" action="{!deleting}"/>
+           <apex:commandLink value="Copy" action="{!Copy}"/>
+            </div>
+            <div style="position:absolute;z-index:100;margin-top:5px;margin-left:550px;">
+                <table Style="width:100px;">
+ <tr bgcolor="#FF8080">
+  <td onmouseover="showmenu('tutorials')" onmouseout="hidemenu('tutorials')" >
+   Action
+   <table class="menu" id="tutorials" style="width:250px;">
+   <tr><td class="menu"><a href="https://ap1.salesforce.com/home/home.jsp">Manage Members</a></td></tr>
+   <tr><td class="menu"><a href="https://ap1.salesforce.com/home/home.jsp">Add Members from Main List</a></td></tr>
+   
+   </table></td></tr></table>
+            </div>
+            <apex:pageBlockSection title="Campaign Details">
+            
+        
+           <apex:outputField value="{!campaign.Name}" />
+           <apex:outputField value="{!campaign.StartDate}"/>
+           <apex:outputField value="{!campaign.EndDate}"/>
+           <apex:outputField value="{!campaign.CreatedByid}"/>
+           <apex:outputField value="{!campaign.LastModifiedByid}"/>
+           <apex:outputField value="{!campaign.Description}"/>
+        
+           <apex:outputField value="{!campaign.Type}"/>
+          
+           <apex:outputField value="{!campaign.Parentid}"/>
+           <apex:outputField value="{!campaign.Status}"/>
+             
+                        </apex:pageBlockSection>
+        </apex:pageBlock>
+   </div>     
+    </apex:form>
+</apex:page>

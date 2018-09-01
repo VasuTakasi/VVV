@@ -1,0 +1,30 @@
+<apex:page sidebar="false" controller="emp_sal" id="p1">
+    
+    
+    <apex:form id="f1">
+      
+       <apex:outputPanel id="out">
+         <apex:pageBlock >
+         <apex:selectList value="{!empname}" size="1">
+           <apex:actionSupport event="onchange" reRender="out,pmsg" status="mystatus"/>
+             <apex:selectOptions value="{!all_emp_names}"></apex:selectOptions>
+         </apex:selectList>
+         <!--<apex:commandButton value="Find" action="{!find}" reRender="out" status="mystatus" /> -->
+          <apex:pageMessages id="pmsg"></apex:pageMessages>
+          <apex:actionSupport reRender="pmsg"/>
+            <apex:pageblockSection >
+              <apex:actionStatus id="mystatus" startText="loading.....">
+                <apex:facet name="stop">
+               
+                <apex:pageBlockTable value="{!sals}" var="s" id="tbl">
+                                   <apex:column headerValue="Nmae">
+                        {!s.name}
+                    </apex:column>
+                </apex:pageBlockTable>
+                </apex:facet>
+               </apex:actionStatus> 
+            </apex:pageblockSection>
+        </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,50 @@
+<apex:page standardController="account"  extensions="status_img">
+  <apex:form >
+ <apex:actionRegion >
+<apex:commandlink value="find" action="{!find}"  reRender="acctDetails, acctTransactions" status="pleasewait"> 
+<apex:actionSupport event="onclick" status="pleasewait" /> 
+</apex:commandlink>
+</apex:actionRegion> 
+
+ <apex:actionStatus id="pleasewait" layout="block">
+<apex:facet name="start">
+<img src="{!$Resource.Red_Rose}"  />
+</apex:facet> 
+</apex:actionStatus>
+<!-- List of Financial Accounts --> 
+<apex:outputPanel id="finAccounts" layout="block" style="overflow:auto; height:250px;"> 
+<apex:pageBlock >
+
+
+
+<apex:pageBlockSection showHeader="true" title="Financial Accounts List" columns="1"> 
+<apex:pageBlockTable value="{!FinAccts}" var="finAcct" id="finAccountsTable" rowClasses="odd,even" styleClass="tableClass"> 
+
+<apex:column >
+<apex:facet name="header">Address</apex:facet>
+</apex:column> 
+<apex:column >
+<apex:facet name="header">City</apex:facet> 
+<apex:outputText value="{!finAcct.name}"/> 
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">State</apex:facet> 
+<apex:outputText value="{!finAcct.phone}"/>
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">Postal</apex:facet> 
+
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">Country</apex:facet> 
+
+</apex:column>
+</apex:pageBlockTable> 
+</apex:pageBlockSection> 
+</apex:pageBlock> 
+</apex:outputPanel>
+  </apex:form>
+</apex:page>

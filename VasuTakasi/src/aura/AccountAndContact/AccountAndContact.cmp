@@ -1,0 +1,38 @@
+<aura:component controller="AccountAndContactController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   
+    <aura:attribute name="records" type="Object[]"/>
+    <table>
+	<aura:iteration var="record" items="{!v.records}">
+        <lightning:recordEditForm aura:id="{!record.accountObj.Id}" 
+                                     recordId="{!record.accountObj.Id}"
+                                     objectApiName="Account">
+            <lightning:messages/>
+            <tr>
+            <td>
+            	<lightning:inputField fieldName="Name"  aura:id="{!record.accountObj.Id}_Name"/>
+            </td>
+            <td>           	
+                                 
+            </td>  
+            </tr>
+            </lightning:recordEditForm>
+        	        
+        <tr>
+        	<td><c:AccountRecord accountObj="{!record.accountObj}" /></td>
+            <td>
+            	<force:inputField value="{!record.accountObj.Phone}"/>
+            </td>
+            <td>
+                ss
+            	<lightning:inputField value="{!record.accountObj.Phone}"/>
+            </td>
+        </tr>
+    </aura:iteration>
+    </table>
+    <lightning:button variant="brand" label="Submit" onclick="{!c.saveRecords}" />
+      <lightning:button type="submit" name="Submit" label="submit" class="slds-m-top_medium"/>
+
+</aura:component>

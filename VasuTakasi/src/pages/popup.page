@@ -1,0 +1,77 @@
+<apex:page standardController="Employee__c" recordSetVar="emp" id="p1" sidebar="false">
+
+ <script>
+      function show()
+      {
+              document.getElementById('p1:f1:pp:detail').style.display="block";
+      }
+      function hide()
+      {
+          document.getElementById('p1:f1:pp:detail').style.display="none";
+      }
+  </script>
+  
+  <style>
+ 
+
+
+body .individualPalette .secondaryPalette.bPageBlock,
+body.UserTagStatsPage .secondaryPalette.bPageBlock{
+    background-color: pink;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-image:url('https://ap1.salesforce.com/resource/1320654473000/img');
+}
+}
+  </style>
+  <apex:form id="f1">
+<apex:pageBlock title="Hello {!$User.FirstName}!" id="pb">
+<apex:pageBlockSection >
+You are displaying contacts from the {!Employee__c.name} account.
+Mouse over a contact's name to view his or her details.
+</apex:pageBlockSection>
+<apex:pageBlockSection >
+hyugfgvbygv
+jhbfhg
+jhfg
+fhgjh
+</apex:pageBlockSection>
+</apex:pageBlock>
+ 
+<apex:pageBlock title="Contacts" id="pb2" >
+
+<apex:dataTable value="{!Emp}" var="contact" cellPadding="4"
+border="1">
+<apex:column onmousemove="show()" onmouseout="hide()" >
+<apex:outputPanel >
+<apex:actionSupport event="onmouseover" reRender="pp" >
+{!contact.name}
+<apex:param name="cid" value="{!contact.id}"/>
+
+</apex:actionSupport>
+</apex:outputPanel>
+</apex:column>
+</apex:dataTable>
+</apex:pageBlock>
+<div id="p1:f1:pb:j_id3" style="background-color:blue;">
+
+
+<apex:pageBlock id="pp" >
+<apex:outputPanel id="detail" style="display:none;margin-top:5px;"> 
+<apex:actionStatus startText="Requesting...">
+<apex:facet name="stop">
+<apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false"
+title="false"/>
+</apex:facet>
+</apex:actionStatus>
+</apex:outputPanel>
+aa<br/>
+ghl
+</apex:pageBlock>
+</div>
+</apex:form>
+</apex:page>

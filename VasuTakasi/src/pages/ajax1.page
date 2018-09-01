@@ -1,0 +1,46 @@
+<apex:page >
+    <script src="/soap/ajax/18.0/connection.js"></script>
+    <script type="text/javascript">
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+        window.onload=allaccounts;
+        function allaccounts()
+        {         
+            var accounts=sforce.connection.query("select id,name from Account order by name");
+            var allaccounts=accounts.getArray('records');            
+            var ddl = document.getElementById('MyAccounts');
+            for (var i = 0; i < allaccounts.length; i++) 
+            {                
+                var productvalues = allaccounts[i];   
+                var theOption = new Option;
+                theOption.text = productvalues.Name;
+                theOption.value = productvalues.Id;
+                ddl.options.add(theOption);             
+            }            
+        }
+        function AccountIddemo()
+        {
+            var contacts=sforce.connection.query("select id,name from Contact where AccountId='"+document.getElementById("MyAccounts").options[document.getElementById("MyAccounts").selectedIndex].value+"'");           
+            var allcontacts=contacts.getArray('records');
+            var ddl = document.getElementById('MyContacts');            
+            ddl.options.length=0;
+                        
+            ddl.add(new Option('--None--','--None--'),0);
+            for (var i = 0; i < allcontacts.length; i++) 
+            {                
+                var productvalues = allcontacts[i];   
+                var theOption = new Option;
+                theOption.text = productvalues.Name;
+                theOption.value = productvalues.Id;
+                ddl.options.add(theOption);             
+            }   
+        }        
+    </script>
+    <label>Parents:</label>
+    <select id="MyAccounts" onchange="AccountIddemo()">
+        <option value="none">--None--</option>
+    </select><br/>
+    <label>Children:</label>
+    <select id="MyContacts">
+        <option value="none">--None--</option>
+    </select><br/>
+</apex:page>

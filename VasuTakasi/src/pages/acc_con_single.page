@@ -1,0 +1,23 @@
+<apex:page controller="acc_cont" sidebar="false" >
+  <apex:form >
+  <apex:outputLink style="margin-left:800px;" value="http://www.google.com" >google</apex:outputLink>&nbsp;&nbsp;
+    <apex:outputLink style="margin-left:0px;" value="http://www.gmail.com" >gmail</apex:outputLink>
+
+      <apex:pageBlock >
+      
+      <apex:panelGrid columns="2">
+      
+      
+          <apex:pageBlockTable value="{!accounts}" var="acc">
+              <apex:column value="{!acc.name}"/>
+              <apex:column value="{!acc.phone}"/>
+          </apex:pageBlockTable>
+          
+          <apex:pageBlockTable value="{!contacts}" var="con">
+             <apex:column value="{!con.name}"/> 
+             <apex:column value="{!con.email}"/>
+          </apex:pageBlockTable>
+           </apex:panelGrid>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

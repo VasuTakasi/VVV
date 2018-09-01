@@ -1,0 +1,95 @@
+<apex:page showHeader="false" standardController="account" recordSetVar="acc">
+<apex:form >
+   <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        //background: #000 url(bg-texture.png) repeat;
+        color: #dddddd;
+      }
+      
+      h1, h3 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+      }
+      
+      a {
+        color: #EB067B;
+      }
+      
+      div#container {
+        width: 580px;
+        margin: 100px auto 0 auto;
+        padding: 20px;
+        background: #000;
+        border: 1px solid #1a1a1a;
+      }
+      
+      /* HOVER STYLES */
+      div#pop-up {
+        display: none;
+        position: absolute;
+        width: 280px;
+        padding: 10px;
+        background: #eeeeee;
+        color: #000000;
+        border: 1px solid #1a1a1a;
+        font-size: 90%;
+      }
+    </style>
+    <apex:includeScript value="{!$Resource.jquery_150}"/> -->
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>-->
+    <script type="text/javascript">
+      $(function() {
+        var moveLeft = 20;
+        var moveDown = 10;
+        
+        $('a#mylink').hover(function(e) {
+          $('div#pop-up').show();
+          //.css('top', e.pageY + moveDown)
+          //.css('left', e.pageX + moveLeft)
+          //.appendTo('body');
+        }, function() {
+          $('div#pop-up').hide();
+        });
+        
+        $('a#mylink').mousemove(function(e) {
+          $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+        });
+        
+      });
+    </script>
+
+   <apex:pageBlock >
+            <apex:pageBlockTable value="{!acc}" var="a">
+                <apex:column >
+                <apex:commandLink id="mylink">
+                {!a.name}
+                </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    <div id="container">
+      <h1>jQuery Tutorial - Pop-up div on hover</h1>
+      <p>
+        To show hidden div, simply hover your mouse over
+        <a href="#" id="mylink">this link</a>.
+      </p>
+      
+      <!-- HIDDEN / POP-UP DIV -->
+      <div id="pop-up">
+        <h3>Pop-up div Successfully Displayed</h3>
+        <apex:image value="{!$Resource.red_rose}"/>
+        <p>
+          This div only appears when the trigger link is hovered over. Otherwise
+          it is hidden from view.
+        </p>
+       
+      </div>
+      
+    </div>
+    </apex:form>
+</apex:page>

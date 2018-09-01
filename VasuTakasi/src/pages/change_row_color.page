@@ -1,0 +1,37 @@
+<apex:page standardController="account" recordSetVar="acc" sidebar="false">
+    <style>
+ .sty1{
+   background-color:red;
+   font-size:20px;
+   color:blue;
+}
+.st2
+{
+ background-color:black;
+}
+</style>
+<script type="text/javascript">
+ function show(pbt)
+{
+    //alert(obj);
+      document.getElementById(pbt).className="sty1";
+}
+</script>
+    <apex:form id="f1">
+       <apex:sectionHeader title="Assighment 5"/>
+        <apex:pageBlock >
+          <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockTable value="{!acc}" var="a"     id="pbt">
+            <apex:column headerValue="Name" id="col1">
+                <apex:commandLink reRender="f1" oncomplete="show('{!$Component.col1}');" >
+                    {!a.name}
+                    <apex:param value="{!a.name}" name="n"  assignTo="{!name}"/>
+                </apex:commandlink>
+            </apex:column>
+            <apex:column value="{!a.BillingState}" id="col2" />
+            <apex:column value="{!a.phone}" id="col3" />
+            <apex:column value="{!a.website}" id="col4" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

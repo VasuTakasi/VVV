@@ -1,0 +1,23 @@
+<apex:page sidebar="false" controller="wrapper_delete">
+<apex:form >
+  
+  <apex:pageBlock >
+   <apex:pageBlockButtons >
+       <apex:commandButton value="Delete Selected" action="{!delete_selected}"/>
+   </apex:pageBlockButtons>
+     <apex:pageMessages ></apex:pageMessages>
+      <apex:pageBlockTable value="{!accounts}" var="a">
+          <apex:column headerValue="Action">
+              <apex:inputCheckbox value="{!a.checkbox}" />
+          </apex:column>
+         <apex:column headerValue="Name">
+                {!a.acc.name}
+          </apex:column>
+          <apex:column headerValue="Phone">
+              {!a.acc.Phone}
+          </apex:column>
+      </apex:pageBlockTable>
+         
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

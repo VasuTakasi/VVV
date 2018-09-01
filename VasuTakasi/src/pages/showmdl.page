@@ -1,0 +1,9 @@
+<apex:page controller="kummei">
+    <apex:form >
+      <apex:commandButton value="show" action="{!str}" onclick="window.showModalDialog('http://www.google.com'+'{!s}');"/>
+    
+    <div>&lt;apex:page &gt;</div> <div>&lt;script&gt;</div> <div>function open()</div> <div>{</div> <div>window.showModalDialog('http://www.gmail.com');</div> <div>}</div> <div>&lt;/script&gt;</div> <div>&nbsp;</div> <div>&lt;apex:form &gt;</div> <div>&nbsp;&lt;apex:commandLink value=&quot;Google&quot; onclick=&quot;window.open('http://www.google.com');&quot;/&gt;<br /> &lt;br/&gt;&lt;br/&gt;</div> <div>&nbsp;&lt;apex:outputLink onclick=&quot;open()&quot;&gt; Gmail&lt;/apex:outputLink&gt;</div> <div>&nbsp;&lt;/apex:form&gt;</div> <div>&lt;/apex:page&gt;<br /> <br /> <br /> <br /> <br /> <br /> Regards,<br /> <br /> Charan<br /> <br /> <br /> <br /> <span class="Apple-tab-span" style="white-space:pre">   </span><em>Please mark it as best if it solves your problem</em></div>
+    
+<div>I think, previous reply the data has been scrambled.<br /> <br /> &lt;apex:page &gt;</div> <div>&lt;script&gt;</div> <div>function func()</div> <div>{</div> <div>window.showModalDialog('http://www.gmail.com');</div> <div>}</div> <div>&lt;/script&gt;</div> <div>&nbsp;</div> <div>&lt;apex:form &gt;</div> <div>&nbsp;&lt;apex:outputLink onclick=&quot;func()&quot;&gt; Gmail&lt;/apex:outputLink&gt;</div> <div>&nbsp;&lt;/apex:form&gt;</div> <div>&lt;/apex:page&gt;</div>
+    </apex:form>
+</apex:page>

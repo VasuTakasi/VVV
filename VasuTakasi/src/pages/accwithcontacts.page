@@ -1,0 +1,14 @@
+<apex:page controller="acc_with_conts" sidebar="false">
+  <apex:form >
+      <apex:pageblock >
+          <apex:repeat value="{!accounts}" var="acc">
+              <apex:pageBlockSection title="Account:- {!acc.name}" columns="1" rendered="{!acc.contacts.size>0}">
+              <apex:pageblockTable title="{!acc.name}" value="{!acc.contacts}" var="a" rendered="{!acc.contacts.size>0}">
+                  <apex:column value="{!a.name}"/>
+                  <apex:column value="{!a.phone}"/>
+              </apex:pageblockTable>
+              </apex:pageBlockSection>
+          </apex:repeat>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

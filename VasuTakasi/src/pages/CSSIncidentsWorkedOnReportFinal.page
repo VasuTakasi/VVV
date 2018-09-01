@@ -1,0 +1,15 @@
+<apex:page controller="CSSIncidentsWorkedOnReportController" showHeader="false" 
+    contentType="application/vnd.ms-excel#IncidentsWorkedOnReport {!MONTH(ToDay())-DAY(ToDay())-YEAR(ToDay())}.xls" cache="true">
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!mapInbound}" var="defId">
+                <apex:column value="{!mapInbound[defId].DefectId}" headerValue="Defect Id" />
+                <apex:column value="{!mapInbound[defId].ReportedDate}"  headerValue="Reported Date"/>
+                <apex:column value="{!mapInbound[defId].Severity}" headerValue="Severity" />
+                <apex:column value="{!mapInbound[defId].Status}" headerValue="Status" />
+                <apex:column value="{!mapInbound[defId].Summary}" headerValue="Summary" />
+                <apex:column value="{!mapInbound[defId].Application}" headerValue="Application"/>
+                <apex:column value="{!mapInbound[defId].CurrentStatus}" headerValue="Current Status"/>
+                <apex:column value="{!mapInbound[defId].ResolutionComments}" headerValue="Resolution Comments" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,190 @@
+<apex:page showheader="false" controller="CSSIncidentsWorkedOnReportController" contentType="application/vnd.ms-excel#CSSIncidentsSummaryReport {!DAY(ToDay())-MONTH(ToDay())}.xls" cache="true">
+	<div>
+		<table cellpadding="5" border="1">
+			<tr>
+				<td colspan="7"> 
+					Incident Summary - <apex:outputText value="{0,date,dd MMM yyyy}">
+										       <apex:param value="{! ToDay()-1 }" />
+										   </apex:outputText> 
+
+										   <apex:outputText value=" as of {0,date,dd MMM yyyy}">
+										       <apex:param value="{! ToDay() }" />
+										   </apex:outputText>	
+				</td>
+			</tr>
+			<tr style="background: #DBE5F1;height: 19.4pt;">
+				<th></th>
+				<th> Status </th>
+				<th> Critical </th>
+				<th> High </th>
+				<th> Medium </th>
+				<th> Low </th>
+				<th> Total </th>
+			</tr>	
+			<tr>
+				<th rowspan="2">
+					Inflow
+				</th>
+				<td>
+					New
+				</td>
+				<td>
+					{!mapSeverity['New']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['New']['High']}
+				</td>
+				<td>
+					{!mapSeverity['New']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['New']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['New']['Total']}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Open / Failed / Pending /Returned
+				</td>
+				<td>
+					{!mapSeverity['OpenAndOther']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['OpenAndOther']['High']}
+				</td>
+				<td>
+					{!mapSeverity['OpenAndOther']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['OpenAndOther']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['OpenAndOther']['Total']}
+				</td>
+			</tr>
+			<tr style="background: #DBE5F1;height: 19.4pt;">
+				<th colspan="2"> Inflow Total </th>
+				<td colspan="4"></td>
+				<td> {!mapSeverity['New']['Total']+mapSeverity['OpenAndOther']['Total']} </td>
+			</tr>
+			<tr>
+				<th rowspan="4"> Outflow </th>
+				<td>
+					Closed
+				</td>
+				<td>
+					{!mapSeverity['Closed']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['Closed']['High']}
+				</td>
+				<td>
+					{!mapSeverity['Closed']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['Closed']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['Closed']['Total']}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Rejected
+				</td>
+				<td>
+					{!mapSeverity['Rejected']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['Rejected']['High']}
+				</td>
+				<td>
+					{!mapSeverity['Rejected']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['Rejected']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['Rejected']['Total']}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Re-assigned to MDM / ODS
+				</td>
+				<td>
+					{!mapSeverity['MDMorODS']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['MDMorODS']['High']}
+				</td>
+				<td>
+					{!mapSeverity['MDMorODS']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['MDMorODS']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['MDMorODS']['Total']}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Re-assigned to Other
+				</td>
+				<td>
+					{!mapSeverity['Other']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['Other']['High']}
+				</td>
+				<td>
+					{!mapSeverity['Other']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['Other']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['Other']['Total']}
+				</td>
+			</tr>
+			<tr style="background: #DBE5F1;height: 19.4pt;">
+				<th colspan="2"> Outflow Total </th>
+				<td colspan="4"></td>
+				<td>
+					{!mapSeverity['Closed']['Total']+mapSeverity['Rejected']['Total']+mapSeverity['MDMorODS']['Total']+mapSeverity['Other']['Total']}
+				</td>
+			</tr>
+			<tr>
+				<th>
+					In - Progress
+				</th>
+				<td>
+					
+				</td>
+				<td>
+					{!mapSeverity['InProgress']['Critical']}
+				</td>
+				<td>
+					{!mapSeverity['InProgress']['High']}
+				</td>
+				<td>
+					{!mapSeverity['InProgress']['Medium']}
+				</td>
+				<td>
+					{!mapSeverity['InProgress']['Low']}
+				</td>
+				<td>
+					{!mapSeverity['InProgress']['Total']}
+				</td>
+			</tr>
+			<tr style="background: #DBE5F1;height: ;">
+				<th colspan="2"> In - Progress Total </th>
+				<td colspan="4"></td>
+				<td> {!mapSeverity['InProgress']['Total']} </td>
+			</tr>
+		</table>
+	</div>
+</apex:page>

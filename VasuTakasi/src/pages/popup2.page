@@ -1,0 +1,68 @@
+<apex:page >
+<style>
+  .bubble {
+    margin: 50px;
+    padding: 100px;
+    position: relative;
+}
+.bubble:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+   Right: 50px;
+   border-top: 20px solid blue;
+   border-top-color: inherit; 
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent; 
+}​
+</style>
+  
+  <style>
+  .chat-bubble {
+  background-color:#EDEDED;
+  border:2px solid #666666;
+  font-size:35px;
+  line-height:1.3em;
+  margin:10px auto;
+  padding:10px;
+  position:relative;
+  text-align:center;
+  width:300px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-box-shadow:0 0 5px #888888;
+  -webkit-box-shadow:0 0 5px #888888;
+}
+.chat-bubble-arrow-border {
+  border-color: #666666 transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom:-22px;
+  left:30px;
+}
+.chat-bubble-arrow {
+  border-color: #EDEDED transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom:-19px;
+  left:30px;
+  
+  
+}
+  </style>
+<div class="bubble" style="background: red; border-color: red;">test</div>
+<div class="bubble" style="background: green; border-color: green;">test</div>​
+
+  <div class="chat-bubble">
+  Buongiorno!
+  <div class="chat-bubble-arrow-border"></div>
+  <div class="chat-bubble-arrow"></div>
+
+  </div>
+</apex:page>

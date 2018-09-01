@@ -1,0 +1,11 @@
+<apex:page controller="aaccont">
+ <apex:form >
+     <apex:pageBlock >
+         <apex:pageBlockSection >
+             <apex:pageBlockTable value="{!cont}" var="c1">
+                 <apex:column value="{!c1.name}"/>
+             </apex:pageBlockTable>
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+ </apex:form>
+ </apex:page>

@@ -1,0 +1,16 @@
+<apex:page sidebar="false" controller="wrapper_page_no">
+  <p align="center" style="font-style:bold;font-size:35px;color:Blue">Page Number in Table</p>
+  <hr/>
+  <apex:form id="f">
+      <apex:pageBlock >
+          <apex:pageBlockTable value="{!list_page_records}" var="a">
+              <apex:column value="{!a.sno}" headerValue="S.No."/>
+              <apex:column value="{!a.acc.name}"/>
+          </apex:pageBlockTable>
+          <apex:commandButton value="First" action="{!first}" reRender="f"/>
+          <apex:commandButton value="Last" action="{!last}" reRender="f"/>
+          <apex:commandButton value="Next" action="{!Next}" reRender="f" rendered="{!show_next}"/>
+          <apex:commandButton value="previous" action="{!previous}" reRender="f"/>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

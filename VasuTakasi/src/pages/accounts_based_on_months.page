@@ -1,0 +1,26 @@
+<apex:page controller="accounts_based_on_months">
+   <apex:form id="f1" >
+       Select Month<apex:selectList size="1" multiselect="false" value="{!selected_month}">
+       <apex:actionSupport event="onchange" reRender="f1" action="{!getrecords}"/>
+       <apex:selectOption itemValue="---None-"></apex:selectOption>
+           <apex:selectOption itemValue="January"></apex:selectOption>
+            <apex:selectOption itemValue="february"></apex:selectOption>
+           <apex:selectOption itemValue="March"></apex:selectOption>
+           <apex:selectOption itemValue="April"></apex:selectOption>
+            <apex:selectOption itemValue="May"></apex:selectOption>
+             <apex:selectOption itemValue="August"></apex:selectOption>
+                <apex:selectOption itemValue="September"></apex:selectOption>
+            <apex:selectOption itemValue="November"></apex:selectOption>
+          <apex:selectOption itemValue="December"></apex:selectOption>
+      </apex:selectList>
+    <!--  <apex:commandButton value="Submit" reRender="f1" action="{!getrecords}"/>-->
+      <apex:pageBlock rendered="{!(selected_month!=null)}">
+          <apex:pageBlockTable value="{!accounts}" var="acc" rendered="{!(accounts.size!=0)}">
+              <apex:column value="{!acc.createddate}"/>
+              <apex:column value="{!acc.name}"/>
+              <apex:column value="{!acc.phone}"/>
+          </apex:pageBlockTable>
+          <apex:outputText rendered="{!(accounts.size==0)}">No Records Found</apex:outputText>
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

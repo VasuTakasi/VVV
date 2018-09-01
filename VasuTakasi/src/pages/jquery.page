@@ -1,0 +1,39 @@
+<apex:page >
+<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"/>
+ <script src="https://www.google.com/jsapi"/>
+<html>
+<head>
+    <script>
+     var j$=jQuery.noConflict();            
+        j$(document).ready(function() {         
+            j$("[id$='link2']").click(function() {               
+                j$("p").hide().slow();
+            });
+        });
+    </script>
+     
+    
+</head>
+<body>
+
+<apex:form >
+    
+ <a id="link1" href="">Link1</a>
+    
+    <p>sadadsadasdasdasasdas<br/>
+    dasdasdasdasdasdadas<br/>
+    adasdasdasdasdasd<br/>
+    dadasdasdasdsadas</p>
+
+<apex:pageBlock id="aaa">
+    <apex:pageblockSection >
+        <apex:pageblockSectionItem >
+        
+            <apex:commandLink id="link2" value="Link2"/>            
+        </apex:pageblockSectionItem>
+    </apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+</body>
+</html>
+</apex:page>

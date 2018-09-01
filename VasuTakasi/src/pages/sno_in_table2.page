@@ -1,0 +1,33 @@
+<apex:page standardController="account" recordSetVar="c">
+     
+ <apex:variable value="{!1}" var="count"/> 
+<apex:form id="f1">
+<table id="claims" border="1" cellspacing="2" cellpadding="5">
+<tr>
+    <th>Row Count</th> 
+    <th>Account Name</th>
+    <th>Phone</th>
+    <th>Created Date</th>
+</tr>
+<apex:repeat var="rc" value="{!c}">
+<tr>
+
+<td>{!FLOOR(count)} </td> 
+<td>{!rc.Name} </td>
+<td>{!rc.phone}</td>
+
+<td><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!rc.createddate}"/></apex:outputText></td>
+
+<apex:variable var="count" value="{!count+ 1}"/>
+
+</tr>
+</apex:repeat>
+
+<p/>
+<b>Total number of rows : </b> {!FLOOR(count-1)}
+
+</table>
+<apex:commandButton value="Next" action="{!next}" reRender="f1"/>
+<apex:commandButton value="Prev" action="{!previous}" reRender="f1"/>
+</apex:form>
+</apex:page>

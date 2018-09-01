@@ -1,0 +1,8 @@
+<apex:page >
+<apex:includeScript value="{!$Resource.Javascript}"/>
+  <apex:form id="f">
+  
+   
+       <apex:commandButton value="show" onclick="sum()" style="color:blue" />
+  </apex:form>
+</apex:page>

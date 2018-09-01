@@ -1,0 +1,51 @@
+<apex:page id="p1">
+
+  <script type="text/javascript">
+  function selectimage()
+   {
+     //alert('ghghh');
+     var e = document.getElementById("p1:f1:sl").value;
+     //var strUser = e.options[e.selectedIndex].text;
+     //alert(e);
+     if(e=="Red")
+     {
+       
+      document.getElementById("p1:f1:pb:r2").style.display="block";
+      document.getElementById("p1:f1:pb:r1").style.display="none";
+      document.getElementById("p1:f1:pb:r3").style.display="none";
+     }
+     else if(e=='Blue')
+     {
+      document.getElementById("p1:f1:pb:r1").style.display="block";
+      document.getElementById("p1:f1:pb:r2").style.display="none";
+      document.getElementById("p1:f1:pb:r3").style.display="none";
+     }
+     else if(e=="Black")
+     {
+      document.getElementById("p1:f1:pb:r3").style.display="block";
+      document.getElementById("p1:f1:pb:r1").style.display="none";
+      document.getElementById("p1:f1:pb:r2").style.display="none";
+     }
+     else
+     {
+      document.getElementById("p1:f1:pb:r3").style.display="none";
+      document.getElementById("p1:f1:pb:r1").style.display="none";
+      document.getElementById("p1:f1:pb:r2").style.display="none";
+     }
+   }
+  </script>
+     <apex:form id="f1">
+        Select Color: <apex:selectList multiselect="false" size="1" id="sl" onchange="selectimage()" >
+            <apex:selectOption itemValue="--None--"></apex:selectOption>
+             <apex:selectOption itemValue="Blue" ></apex:selectOption>
+             <apex:selectOption itemValue="Red"></apex:selectOption>
+             <apex:selectOption itemValue="Black"></apex:selectOption>
+           </apex:selectList>
+      <apex:pageBlock id="pb">
+         <apex:image value="{!$Resource.blue_rose}" style="display:none;" id="r1"/>
+         <apex:image value="{!$Resource.red_rose}" style="display:none;" id="r2"/>
+         <apex:image value="{!$Resource.black_rose}" style="display:none;" id="r3"/>
+        <!-- <iframe height="400px" id="theIframe" name="theIframe" src="http://www.salesforce.com" width="200"></iframe> -->
+      </apex:pageBlock>     
+     </apex:form>
+</apex:page>

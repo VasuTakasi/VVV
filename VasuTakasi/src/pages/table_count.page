@@ -1,0 +1,16 @@
+<apex:page standardController="Student__c" recordSetVar="s" extensions="table_count">
+   <script>
+       function count()
+       {
+         var i=0;
+       }
+   </script>
+   <apex:form >
+       <apex:pageBlock >
+           <apex:pageBlockTable value="{!s}" var="sr">
+                <apex:column headerValue="S.No" value="{!(sr)}"  />
+               <apex:column value="{!sr.name}"/>
+           </apex:pageBlockTable>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

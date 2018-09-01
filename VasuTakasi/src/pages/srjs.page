@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" >
+<apex:stylesheet value="{!$Resource.css}"/>
+<apex:includeScript value="{!$Resource.js}"/>
+<body class="color">
+<form >
+ <input type="button"  value=".a.s.." onClick="vvv()"/> 
+   </form>
+  </body>
+</apex:page>

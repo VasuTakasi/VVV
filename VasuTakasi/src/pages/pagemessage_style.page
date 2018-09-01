@@ -1,0 +1,20 @@
+<apex:page standardController="account" recordSetVar="acc" extensions="pagemassage_style">
+    
+    <apex:form id="f1">
+       <apex:sectionHeader title="Assighment 5"/>
+        <apex:pageBlock >
+          <apex:pageMessages escape="false"></apex:pageMessages>
+            <apex:pageBlockTable value="{!acc}" var="a" >
+            <apex:column headerValue="Name" id="col1">
+                <apex:commandLink action="{!selected_name}" reRender="f1" >
+                    {!a.name}
+                    <apex:param value="{!a.name}" name="n"  assignTo="{!name}"/>
+                </apex:commandlink>
+            </apex:column>
+            <apex:column value="{!a.BillingState}" id="col2" />
+            <apex:column value="{!a.phone}" id="col3" />
+            <apex:column value="{!a.website}" id="col4"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

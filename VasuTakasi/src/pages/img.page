@@ -1,0 +1,10 @@
+<apex:page >
+  <input type="button" value="Show image" onclick="show()" show="false"/>
+  <script type="text/javascript">
+function show()
+{
+"<input type=text id=PrjNme size=100/>"
+ 
+}
+  </script>
+</apex:page>

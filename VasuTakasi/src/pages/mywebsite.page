@@ -1,0 +1,93 @@
+<apex:page showHeader="false" sidebar="false" id="p1">
+ <style>
+      .basicdiv
+      {
+          margin-top:10px;
+          margin-left:10px;
+         Margin-right:10px; 
+         margin-bottom:100px;                
+         // border-width:5px;
+         //border-style:solid;
+         //background-color:red;
+      }
+      .div2
+      {
+     border-radius: 18px;
+     -moz-border-radius: 18px;
+     -webkit-border-radius: 18px;
+     border-width:5px;
+     border-style:solid;
+     width: 360px;
+     height: 360px;
+     margin-top:60px;
+     margin-left:580px;
+     position:absolute;
+     z-index:100;
+     border-color:#1E90FF;
+      }
+      
+body button,
+body .x-btn,
+body .btn,
+body .btnDisabled,
+body .btnCancel,
+body .menuButton .menuButtonButton
+{
+color:red;
+width:60px;
+height:25px;
+font-size:14px;
+background:#3e9ad2;
+
+-webkit-box-shadow:0 0 4px #000;/*safari and Chrome*/
+-moz-box-shadow:0 0 4px #000; /*Mozilla*/
+-o-box-shadow:0 0 4px #000; /*Opera*/
+-ms-box-shadow:0 0 4px #000; /*Ms IE*/
+box-shadow:0 0 4px #000; /*W3C*/
+
+-webkit-border-radius:15px;/*safari and Chrome*/
+-moz-border-radius:15px; /*Mozilla*/
+-o-box-border-radius:15px; /*Opera*/
+-ms-box-border-radius:15px; /*Ms IE*/
+border-radius:15px; /*W3C*/
+
+background-image:-webkit-linear-gradient(top,#ffffff 0%,#3e9ad2 40%);
+background-image:-webkit-linear-gradient(bottom,#ffffff 0%,#3e9ad2 50%);
+background-image:-moz-linear-gradient(top,#ffffff 0%,#3e9ad2 100%);
+//background-image:-o-linear-gradient(top,#ffffff 0%,#3e9ad2 100%);
+//background-image:-ms-linear-gradient(top,#ffffff 0%,#3e9ad2 100%);
+//background-image:linear-gradient(top,#ffffff 0%,#3e9ad2 100%);
+}
+ </style>
+
+ <apex:form styleClass="basicdiv" id="f" >
+ <body>
+  <p style="font-size:65px;font-family:Monotype Corsiva;color:#FF1493;margin-top:30px;margin-left:450px;position:absolute;z-index:-10;">2</p>
+ <div >
+           <p style="font-size:35px;font-family:Showcard Gothic;color:#FF1493;margin-left:400px;position:absolute:z-index:-2;">WELCOME</p>
+          
+           <apex:image url="{!URLFOR($Resource.vmail)}"  style="height:300px;width:320px;margin-top:90px;margin-left:50px;position:absolute;z-index:-1"/>
+           <p style="font-size:50px;color:#1E90FF;font-family:Wide Latin;position:absolute;z-index:10;margin-top:300px;Margin-left:280px;">MAIL</p>
+     
+ </div>
+ <div class="div2" id="d2">
+     <p style="font-size:19px;font-style:vardana;color:red;margin-left:110px;">Sign In Here</p>
+    <apex:panelGrid columns="2" style="margin-top:20px;margin-left:40px;">
+    <apex:outputText >User Id:</apex:outputText><apex:inputtext />
+    <apex:outputText >Pass Word:</apex:outputText><apex:inputtext />
+    </apex:panelGrid>
+    <table style="margin-top:23px;margin-left:52px;"><tr>
+    <td>
+     <apex:commandButton value="Sign in" onclick="" />
+     </td><td>
+      <apex:inputCheckbox />
+      </td><td>
+      <p style="color:#7B68EE;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='#7B68EE'">Remember User Id</p>
+   </td></tr></table>
+     <apex:commandLink value="Did you forget your password ?" id="cl1" style="color:#40E0D0;margin-left:76px;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='#40E0D0'"  />
+    
+ </div>
+ 
+</body>
+</apex:form>
+</apex:page>

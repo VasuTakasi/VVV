@@ -1,0 +1,12 @@
+<apex:page controller="dependentpicklist">
+  <apex:form >
+      Employees   <apex:selectList size="1" value="{!empname}">
+      <apex:actionSupport event="onchange" reRender="out" />
+       <apex:selectOptions value="{!emplist}">
+                       </apex:selectOptions>
+           </apex:selectList>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Salorys:<apex:selectList id="out" size="1">
+       <apex:selectOptions value="{!empcontacts}"></apex:selectOptions>
+      </apex:selectList>
+  </apex:form>
+</apex:page>

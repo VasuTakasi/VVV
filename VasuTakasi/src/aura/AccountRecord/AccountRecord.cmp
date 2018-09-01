@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="accountObj" type="Account" default="{ 'sobjectType': 'Account' }" />
+    <force:inputField value="{!v.accountObj.Phone}"/>
+    
+</aura:component>

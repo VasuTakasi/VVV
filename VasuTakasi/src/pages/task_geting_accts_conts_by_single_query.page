@@ -1,0 +1,9 @@
+<apex:page controller="accts_conts_by_single_query">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockTable value="{!conts}" var="c">
+              <apex:column value="{!c.Id}"/>
+          </apex:pageBlockTable>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

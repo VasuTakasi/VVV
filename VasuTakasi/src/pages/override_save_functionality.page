@@ -1,0 +1,20 @@
+<apex:page sidebar="false" standardController="Employee__c"  extensions="ovveride_savefunctionality" id="p1">
+<script>
+    function fun()
+    {
+        document.getElementById('p1:f1:pb:pbs:ip1').value='';
+        document.getElementById('p1:f1:pb:pbs:ip2').value='';
+    }
+</script>
+  <apex:form id="f1">
+    <apex:outputPanel id="out" >
+      <apex:pageBlock id="pb" >
+         <apex:pageBlockSection columns="1" id="pbs">
+          <apex:inputField value="{!Employee__c.name}" id="ip1"/>
+          <apex:inputField value="{!Employee__c.Phone__c}" id="ip2"/>
+         </apex:pageBlockSection>
+        <apex:commandButton value="save" action="{!dosave}" reRender="out" />
+       </apex:pageBlock>
+      </apex:outputPanel> 
+  </apex:form>
+</apex:page>

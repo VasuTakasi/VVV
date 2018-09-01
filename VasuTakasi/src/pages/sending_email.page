@@ -1,0 +1,34 @@
+<apex:page controller="relatedcontacts">
+<script>
+
+function showModal(val){
+
+//window.showModalDialog('/apex/secondpage?id='+val);
+
+window.showModalDialog('/apex/contacts_with_checkbox?id='+val); 
+
+}
+
+</script>
+  <apex:form >
+      <apex:pageblock >
+      <apex:pageBlockSection title="Records">
+      <apex:pageBlockTable value="{!Accounts}" var="a">
+      <apex:column headerValue="Name">
+        <apex:commandlink value="{!a.Name}" onclick="showModal('{!a.accid}')" />
+      </apex:column>
+      <apex:column headerValue="phone" >
+      {!a.phone}
+      </apex:column>
+     <apex:column headerValue="website" >
+      {!a.website}
+      </apex:column>
+      <apex:column headerValue="taxable" >
+       {!a.taxable}
+      </apex:column>
+     
+      </apex:pageBlockTable>
+      </apex:pageBlockSection>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

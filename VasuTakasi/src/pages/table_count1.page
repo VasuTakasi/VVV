@@ -1,0 +1,24 @@
+<apex:page standardController="Student__c" recordSetVar="s">
+  <apex:repeat value="{!s}" var="a">
+<table border="1" width="100%" id="table4">
+<tr>
+       <td bgcolor="#C0C0C0"><font face="Arial">S.No:</font></td>
+       <td bgcolor="#C0C0C0" width="40%"><font face="Arial">Product--Description</font></td>     
+        
+       <td bgcolor="#C0C0C0"><font face="Arial">QTY</font></td>
+       
+</tr>
+ 
+<tr>
+      
+           <td >1</td>       
+             
+            
+             <td>{!a.name}</td>
+             
+            
+             
+          </tr>
+    </table>
+</apex:repeat>
+</apex:page>

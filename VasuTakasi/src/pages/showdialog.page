@@ -1,0 +1,18 @@
+<apex:page standardController="Employee__c" recordSetVar="emp" >
+  <script>
+      function fun(id)
+      {
+          //alert(id);
+          window.showModalDialog('/apex/showdialogdetail?id='+id);
+      }
+  </script>
+     <apex:form >
+         <apex:pageBlock >
+             <apex:pageBlockTable value="{!emp}" var="e"> 
+                 <apex:column headerValue="Employee Name">
+                     <apex:commandLink value="{!e.name}" onclick="fun('{!e.id}')"/>
+                 </apex:column>
+             </apex:pageBlockTable>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

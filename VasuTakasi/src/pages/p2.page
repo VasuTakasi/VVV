@@ -1,0 +1,21 @@
+<apex:page standardController="Employee__c"  extensions="ext">
+    <apex:form >
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock >
+    <apex:pageBlockSection >
+        <apex:inputField value="{!Employee__c.name}"/>
+        <apex:inputField value="{!Employee__c.Phone__c}"/>
+     </apex:pageBlockSection>
+     <apex:pageBlockButtons >
+     <apex:commandButton value="save" action="{!Save}"/>
+     </apex:pageBlockButtons>
+     </apex:pageBlock>
+     <apex:pageBlock >
+     <apex:pageBlockTable value="{!allemp}" var="emp" >
+        <apex:column value="{!emp.name}"/>
+                <apex:column value="{!emp.Phone__c}"/>
+
+     </apex:pageBlockTable>
+     </apex:pageBlock>
+    </apex:form> 
+</apex:page>

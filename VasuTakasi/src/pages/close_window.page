@@ -1,0 +1,11 @@
+<apex:page >
+  <script>
+      function Close()
+        {          
+          window.close();
+        }
+    </script>
+  <apex:form >
+      <apex:commandLink value="close" onclick="close()"/>
+  </apex:form>
+</apex:page>

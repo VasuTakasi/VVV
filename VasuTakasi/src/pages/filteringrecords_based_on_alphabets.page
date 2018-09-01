@@ -1,0 +1,40 @@
+<apex:page showHeader="false" sidebar="false" id="p1" controller="filterrecords">
+    <script type="text/javascript">
+        function filt(ch)
+        {
+           
+            document.getElementById('p1:f1:iph').value=ch;
+        }
+    </script>
+      <p style="font-style:italic;font-size:20px;color:blue;border-bottom:solid;background-color:yellow;border-color:red;" ALIGN="CENTER">FILTERING RECORDS BASED ON ALPHABETS</P>
+    <apex:form id="f1">
+        <apex:inputHidden value="{!selectedchar}" id="iph"/>
+        <apex:commandLink value="All" action="{!filter}" onclick="filt('ALL')" reRender="table" style="font-size:18px;color:red" status="fct"/>&nbsp;&nbsp;
+         <apex:commandLink value="A" action="{!filter}" onclick="filt('A')" reRender="table" style="font-size:18px;color:red" status="fct"/>&nbsp;&nbsp;
+         <apex:commandLink value="B" action="{!filter}" onclick="filt('B')" reRender="table" style="font-size:18px;color:red"/>&nbsp;&nbsp;
+         <apex:commandLink value="C" action="{!filter}" onclick="filt('C')" reRender="table" style="font-size:18px;color:red"/>&nbsp;&nbsp;
+         <apex:commandLink value="D" action="{!filter}" onclick="filt('D')" reRender="table" style="font-size:18px;color:red"/>&nbsp;&nbsp;
+         <apex:pagemessages ></apex:pagemessages><br/>
+         <apex:actionStatus id="fct" startText="loding............."> 
+         <apex:facet name="stop">
+     <APEX:PAGEBlock id="pb">
+    
+         <apex:outputPanel id="out">
+           
+             <apex:pageBlockTable value="{!records}" var="r" id="table">
+              
+                 <apex:column headerValue="name">
+                     {!r.name}
+                 </apex:column>
+                 <apex:column headerValue="phone">
+                     {!r.Phone__c}
+                 </apex:column>
+                
+             </apex:pageBlockTable>
+            
+         </apex:outputPanel>
+     </APEX:PAGEBlock> 
+      </apex:facet>
+    </apex:actionStatus>
+    </apex:form>  
+</apex:page>

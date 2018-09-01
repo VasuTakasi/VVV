@@ -1,0 +1,10 @@
+<apex:page controller="ide_class6">
+	<apex:form >
+	<apex:pageblock >
+	<apex:pageblocksection >
+	  <apex:inputfield value="{!c.name}"></apex:inputfield>
+	  </apex:pageblocksection>
+	  </apex:pageblock>
+	  <apex:pageblock ></apex:pageblock>
+	</apex:form>
+</apex:page>

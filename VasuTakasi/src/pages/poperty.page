@@ -1,0 +1,15 @@
+<apex:page controller="property">
+  <apex:form id="f1" >
+<apex:pageMessages ></apex:pageMessages>
+       <apex:inputText value="{!iptext}"/>
+       <apex:commandButton value="Go" action="{!go}" reRender="f1"/>
+       <apex:dataTable value="{!table}" var="t" bgcolor="red" border="2" >
+          <apex:column value="{!t.name}" headerValue="name"/>
+            <apex:column value="{!t.phone}" headerValue="phone"/>
+       </apex:dataTable>
+       <apex:outputPanel rendered="{!show_hide}" >
+       <apex:outputText value="invalid name" rendered="{!(table.size==0)}" />
+       </apex:outputPanel>
+         
+  </apex:form>
+</apex:page>

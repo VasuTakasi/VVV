@@ -1,0 +1,13 @@
+<apex:page controller="picklist_onchange">
+ <apex:form >
+     <apex:pageBlock >
+         <apex:selectList multiselect="false" size="1" value="{!pick_value}" onchange="doaction()">
+          <apex:actionFunction action="{!onchange}" name="doaction" />
+             <apex:selectOption itemLabel="--None--" itemValue="--None--"></apex:selectOption>
+             <apex:selectOption itemLabel="Account" itemValue="Account"></apex:selectOption>
+             <apex:selectOption itemLabel="contact" itemValue="contact"></apex:selectOption>
+         </apex:selectList>
+        <apex:pageMessages ></apex:pageMessages>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

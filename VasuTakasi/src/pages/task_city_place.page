@@ -1,0 +1,22 @@
+<apex:page controller="city_place">
+  <apex:form id="f1">
+      Enter City<apex:inputText value="{!city}"/>
+      <apex:commandButton value="Go" action="{!findplace}" reRender="f1"/>
+      <br/>
+      <apex:outputPanel rendered="{!show_hide}" style="width:50;height:20;border-size:2;background-color:pink;color:blue;">
+      Place is:  <apex:outputText >{!place}</apex:outputText>
+     
+  <apex:pageBlock >
+      <apex:pageBlockTable value="{!attachments}" var="a" rendered="{!(attachments.size!=0)}">
+         
+         <apex:column headerValue="View">
+            
+  <!-- <apex:outputLink value="{!URLFOR($Action.Attachment.Download, a.Id)}" target="_blank">View</apex:outputLink>-->
+  <img src="{!URLFOR($Action.Attachment.Download, a.Id)}" width="100" height="50"/>
+        
+    </apex:column>
+      </apex:pageBlockTable>
+  </apex:pageBlock>
+  </apex:outputPanel>
+  </apex:form>
+</apex:page>

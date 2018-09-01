@@ -1,0 +1,15 @@
+<apex:page controller="no_of_weeks">
+<script>
+                       function DynamicDatePicker(d_id)
+                       {
+                       
+                         DatePicker.pickDate(false,d_id.id,false);
+                       }
+</script>
+  <apex:form >
+      DatePicker From JavaScript<apex:inputText value="{!d_date_str}" id="t" onfocus="DynamicDatePicker(this);" onchange="checkDateFormatt(this.id);" size="20" disabled="false" style="width:150px;"/>
+      <apex:commandButton value="get week no" action=" currentWeekOfMonth"/>
+    <apex:outputText >{!weekCount}</apex:outputText>  
+      
+  </apex:form>
+</apex:page>

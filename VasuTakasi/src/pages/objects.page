@@ -1,0 +1,24 @@
+<apex:page controller="search_objects2">
+<apex:form id="f1"> 
+    <apex:inputText value="{!searchname}"/> 
+    <apex:commandButton value="search" action="{!search}" reRender="f1"/>
+
+ <apex:pageBlock >
+  <apex:pageBlockSection columns="1" rendered="{!(contacts.size)!=null}" >
+  <apex:sectionHeader title="contacts" />
+    <apex:pageBlockTable value="{!contacts}" var="s" >
+       <apex:column value="{!s.lastname}"/>
+       <apex:column value="{!s.firstname}"/>
+      </apex:pageblockTable>
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection columns="1" >
+    <apex:sectionHeader title="accounts" />
+ <apex:pageBlockTable value="{!accounts}" var="a">
+      <apex:column value="{!a.name}"/>
+      <apex:column value="{!a.phone}"/>
+      </apex:pageblockTable>
+    </apex:pageBlockSection>  
+ </apex:pageBlock>
+  </apex:form>
+</apex:page>

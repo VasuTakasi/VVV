@@ -1,0 +1,21 @@
+<apex:page standardController="Employee__c" recordSetVar="e" >
+  <apex:form >
+  <apex:pageBlock >
+  <apex:dataTable value="{!e}" var="emp" >
+  <apex:column >
+  <apex:facet name="header">Name</apex:facet>
+<apex:actionSupport event="onmouseover" reRender="list">
+{!emp.name}
+<apex:param name="cid" value="{!emp.id}"/>
+</apex:actionSupport>
+</apeX:column>
+<apex:column >
+{!emp.Phone__c}
+</apex:column>
+  </apex:dataTable>
+  <apex:outputPanel id="list">
+  <apex:detail subject="{!$CurrentPage.parameters.cid}" />
+  </apex:outputPanel>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

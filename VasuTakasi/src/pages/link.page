@@ -1,0 +1,15 @@
+<apex:page standardController="Employee__c">
+<apex:form >  <apex:pageBlock >
+  <apex:dataTable value="{!Employee__c.Salorys__r}" var="emp">
+  <apex:column >
+  <apex:facet name="header">Name</apex:facet>
+  <apex:commandLink >
+ {!emp.name}
+  <apex:param name="vcid" value="{!emp.id}"/>
+ </apex:commandlink>
+  </apex:column>
+    </apex:dataTable>
+  </apex:pageBlock>
+  <apex:detail subject="{!$CurrentPage.parameters.vcid}" relatedList="false" title="false"/>
+  </apex:form>
+</apex:page>

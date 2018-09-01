@@ -1,0 +1,17 @@
+<apex:page controller="fileupload">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+    <apex:repeat value="{!atts}" var="att">
+      <apex:pageBlockSectionItem >
+        <apex:outputPanel >
+          <apex:inputFile value="{!att.Body}" fileName="{!att.name}" />
+        </apex:outputPanel>
+      </apex:pageBlockSectionItem>      
+</apex:repeat>
+
+<apex:inputFile value="{!UploadDoc.body}" filename="{!UploadDoc.name}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

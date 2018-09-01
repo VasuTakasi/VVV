@@ -1,0 +1,19 @@
+<apex:page sidebar="false" controller="empclone">
+<apex:form >
+ <apex:pageBlock >
+  <apex:pageBlockTable value="{!employees}" var="emps">
+   <apex:column headerValue="Name">   
+ {!emps.name}
+   </apex:column>
+    <apex:column headerValue="Phone">
+{!emps.Phone__c}
+    </apex:column> 
+    <apex:column headerValue="Action">
+    <apex:commandLink value="clone" action="{!cloning}">
+    <apex:param name="eid" value="{!emps.id}" assignTo="{!eid}"/>
+    </apex:commandLink>
+    </apex:column>
+  </apex:pageBlockTable>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

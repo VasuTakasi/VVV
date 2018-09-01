@@ -1,0 +1,26 @@
+<apex:page >
+    
+<script type="text/javascript">
+
+function go()
+{
+location=document.forms[0].gowhere.value;
+}
+
+</script>
+
+  <apex:form >
+   <div>
+ 
+
+
+<select id="gowhere" onmouseover="go()">
+<option>-Select location-</option>
+<option value="/asp/default.asp">ASP Coding</option>
+<option value="/flash/default.asp">Flash Tutorial</option>
+<option value="/js/default.asp">JavaScripts</option>
+</select>
+
+   </div> 
+  </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="sno_in_table" >
+ <apex:form >
+     <apex:pageBlock >
+         <apex:pageBlockTable value="{!records}" var="r">
+             <apex:column value="{!r.sno}" headerValue="S.NO" style="color:blue;font-style:italic;"/>
+             <apex:column value="{!r.emp.name}"/>
+             <apex:column value="{!r.emp.Phone__c}"/>
+         </apex:pageBlockTable>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

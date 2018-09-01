@@ -1,0 +1,4 @@
+<apex:page >
+   <h1>Ide Page</h1>
+   <apex:Pageblock > </apex:Pageblock>
+</apex:page>

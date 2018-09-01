@@ -1,0 +1,61 @@
+<apex:page standardController="campaign" extensions="classcampaign" sidebar="false" showHeader="false" id="p1">
+ <script>
+   function fun()
+   {
+    document.getElementById('p1:f1:iphdn').value="recently Modified";
+        
+   }
+ </script>
+ <body onload="table">
+  <apex:form id="f1">
+  <apex:inputHidden id="iphdn" value="{!refresh}"/>
+      <apex:pageBlock title="User Driven Campaigns" id="pb1" >
+                   <apex:pageBlockSection id="pbs">
+           View:<apex:selectList size="1" value="{!listvalue}" id="sl" >
+             
+             <apex:actionSupport event="onchange" reRender="table"  />
+                   <apex:selectOption itemValue="Recently Modified"  ></apex:selectOption>
+                   <apex:selectOption itemValue="All Campaigns"  ></apex:selectOption>
+                   <apex:selectOption itemValue="All Active Campaigns"  ></apex:selectOption>
+                   <apex:selectOption itemValue="My Active Campaigns"  ></apex:selectOption>
+                   <apex:selectOption itemValue="Inactive Campaigns"  ></apex:selectOption>
+              </apex:selectList>
+             <apex:outputPanel id="tab" > 
+              
+             
+          <apex:pageBlockTable value="{!camptab}" var="c" id="table" >
+            <apex:column headerValue="Name">
+             <apex:commandLink action="{!passid}">
+                   {!c.name}
+                 </apex:commandLink>
+              </apex:column>
+             <apex:column headerValue="Status">{!c.status}</apex:column>
+              <apex:column headerValue="Type">{!c.type}</apex:column>
+               <apex:column headerValue="StartDate">{!c.startdate}</apex:column>
+          </apex:pageBlockTable></apex:outputPanel>
+          </apex:pageBlockSection>
+         </apex:pageBlock>
+       
+      
+          
+     
+       <apex:outputPanel id="out" style="display:none">
+       <apex:pageblock >
+           <apex:pageblocksection >
+               <apex:pageBlockTable value="{!recentlymodified}" var="c"  > 
+                   <apex:column headerValue="Name">
+             <apex:commandLink action="{!passid}">
+                     {!c.name}
+                 </apex:commandLink>
+              </apex:column>
+             <apex:column headerValue="Status">{!c.status}</apex:column>
+              <apex:column headerValue="Type">{!c.type}</apex:column>
+               <apex:column headerValue="StartDate">{!c.startdate}</apex:column>
+               </apex:pageBlockTable>
+                 
+           </apex:pageblocksection>                  
+       </apex:pageblock>
+   </apex:outputPanel>  
+  </apex:form>
+  </body>
+</apex:page>

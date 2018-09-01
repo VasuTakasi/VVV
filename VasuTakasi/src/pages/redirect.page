@@ -1,0 +1,3 @@
+<apex:page action="{!urlfor($action.employee__c.list,$objecttype.employee__c)}">
+ 
+</apex:page>

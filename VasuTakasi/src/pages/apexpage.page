@@ -1,0 +1,22 @@
+<apex:page standardController="account" RecordSetVar="ACC" id="p">
+    <script type="text/javascript">
+          function uncheck(check,chk)
+          {
+             //document.getElementById("p:f:pb:tab:col:check").checked=false;
+             //if(check.checked==false)
+             document.getElementById(chk).checked=false;
+              //alert(s+'222');
+             //check.checked=true;
+          }
+    </script>
+ <apex:form id="f">
+  <apex:pageBlock id="pb">
+      <apex:pageBlockTable value="{!ACC}" var="a" id="tab">
+        <apex:column headervalue="Select"  id="col" >
+            <input type="Checkbox" id="check" name="check" onclick="uncheck(this,'{!$Component.check}')" />
+        </apex:column>
+        <apex:column value="{!a.name}"/>
+    </apex:pageblockTable>
+  </apex:pageBlock>
+ </apex:form> 
+</apex:page>

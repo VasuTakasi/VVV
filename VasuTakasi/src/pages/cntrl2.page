@@ -1,0 +1,3 @@
+<apex:page controller="count">
+COUNT IS: <apex:outputText value="{!cnt}" />
+</apex:page>

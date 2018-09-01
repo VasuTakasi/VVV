@@ -1,0 +1,91 @@
+<apex:page controller="PagingController" sidebar="false">
+    
+    
+  <style>
+  table {
+border-collapse: separate;
+border-spacing: 2px;
+//background-color:green;
+}
+  body #AppBodyHeader{
+    background-color:yellow;
+    border-color:red;
+    border-style:solid;
+}
+  
+    .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader
+    {
+    border-top: 0;
+    color: red;
+    background-color:blue;
+    }
+body .bRelatedList .pbTitle h3,
+body .bPageBlock .pbTitle h2,
+body .bPageBlock .pbTitle h3,
+body .bSubBlock h3.lbHeader {
+    color:#FF0000;
+    font-size:1.3em;
+    background-color:;
+}
+
+body .bPageBlock,
+body #bodyCell .bResource .secondaryPalette,
+body .secondaryPalette.bPageBlock,
+body .overlayDialog .secondaryPalette.bPageBlock,
+body .individualPalette .secondaryPalette.bPageBlock,
+body .bodyDiv .genericTable,
+body .genericPageBlockTable,
+body .bodyDiv .bSubBlock,
+body .bComponentBlock .bPageBlock,
+body .bMyDashboard .bPageBlock,
+body.rlHoverFrame .bPageBlock,
+body.subjectSelectionPopup div.choicesBox,
+body.lookupTab .secondaryPalette.bPageBlock,
+body.popupTab .secondaryPalette.bPageBlock,
+body.UserTagStatsPage .secondaryPalette.bPageBlock
+{
+    background-color: #FFC0CB;
+    border-color:blue;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+  </style>
+   <apex:form id="tbl">
+    <apex:pageBlock title="Paging through Employees of Stuff" >
+      
+      <apex:pageBlockButtons location="top">
+        <apex:commandButton action="{!process}" value="Process Selected" reRender="tbl"/>
+        <apex:commandButton action="{!cancel}" value="Cancel" reRender="tbl"/>
+      </apex:pageBlockButtons>
+      <apex:pageMessages />
+ 
+      <apex:pageBlockSection title="Employee Results -  Page #{!pageNumber}" columns="1"  >
+      
+        <apex:pageBlockTable value="{!employees}" var="c" >
+          <apex:column width="25px">
+            <apex:inputCheckbox value="{!c.checked}"/>
+          </apex:column>
+          <apex:column value="{!c.emp.Name}" headerValue="Name"/>
+          <apex:column value="{!c.emp.Phone__c}" headerValue="phone"/>
+           <apex:column value="{!c.emp.Country__c}" headerValue="country"/>
+        </apex:pageBlockTable>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+ 
+    <apex:panelGrid columns="4">
+    <apex:commandLink action="{!first}" reRender="tbl">First</apex:commandlink>
+    <apex:commandLink action="{!previous}" rendered="{!hasPrevious}" reRender="tbl">Previous</apex:commandlink>
+    <apex:commandLink action="{!next}" rendered="{!hasNext}" reRender="tbl">Next</apex:commandlink>
+    <apex:commandLink action="{!last}" reRender="tbl">Last</apex:commandlink>
+    </apex:panelGrid>
+    <apex:actionFunction action="{!getrecords}" name="resize"/>
+  <apex:selectList size="1" value="{!psize}" onchange="resize()">
+      <apex:selectOptions value="{!sizes}"></apex:selectOptions>
+  </apex:selectList>
+  </apex:form>
+
+</apex:page>

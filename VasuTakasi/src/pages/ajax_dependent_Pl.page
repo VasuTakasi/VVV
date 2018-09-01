@@ -1,0 +1,10 @@
+<apex:page Controller="dependent_PL">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection >
+              <apex:inputText label="Country"  onkeyup="searchcountry()" value="{!country_val}"/>
+              <apex:actionFunction action="{!search_country}" name="searchcountry"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

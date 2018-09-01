@@ -1,0 +1,7 @@
+<apex:page controller="dynamic_retrieve">
+  <apex:form >
+      <apex:selectList id="countries"          size="1" required="true">
+  <apex:selectOptions value="{!Pick_Vals}"/>
+</apex:selectList>
+  </apex:form>
+</apex:page>

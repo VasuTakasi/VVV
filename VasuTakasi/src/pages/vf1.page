@@ -1,0 +1,10 @@
+<apex:page standardController="Employee__c" sidebar="true" showHeader="false" recordSetVar="emps">
+<table>
+    <tr>
+    	<td>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+</apex:page>

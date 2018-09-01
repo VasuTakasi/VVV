@@ -1,0 +1,7 @@
+<apex:page standardController="contact" extensions="con_save">
+  
+ <apex:form >
+     <apex:inputField value="{!contact.lastname}"/>
+     <apex:commandButton value="save" action="{!do_save}"/>
+ </apex:form>
+</apex:page>

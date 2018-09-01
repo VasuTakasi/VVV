@@ -1,0 +1,36 @@
+<apex:page sidebar="false" standardController="Contact" extensions="DataPopulate2" id="p1">
+    
+     <script>
+    function copyaddr(chk)
+    {
+       
+        if(chk.checked)
+     {
+       document.getElementById('p1:f1:a:ad:street').value = document.getElementById('p1:f1:a:as:mstreet').value;      
+     }
+       
+    }
+</script>
+    
+    <apex:form id="f1">
+          <apex:inputcheckbox id="chk1" onclick="copyaddr(this);"/> 
+    <apex:actionfunction name="fun1" action="{!testAcc}" />
+        <apex:pageblock id="a">
+    
+            <apex:pageblocksection columns="1" id="as">
+                <apex:inputfield value="{!con.AccountId}" onchange="fun1();"/>
+                <apex:inputField value="{!con.Mailingstreet}" id="mstreet"/>
+                <apex:inputField value="{!con.Mailingcity}"/>
+                <apex:inputField value="{!con.Mailingcountry}"/> 
+                <apex:inputField value="{!con.MailingState }"/>
+                <apex:inputField value="{!con.MailingPostalCode}"/>
+            </apex:pageblocksection>
+            <apex:pageBlockSection id="ad" >
+                <apex:inputField value="{!con.otherstreet}" id="street"/>
+                <apex:inputField value="{!con.othercity}"/>
+                <apex:inputField value="{!con.othercountry}"/> 
+                
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

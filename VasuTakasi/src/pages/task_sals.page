@@ -1,0 +1,10 @@
+<apex:page controller="sals">
+  <apex:form >
+      <apex:pageBlock >
+        <apex:panelGrid >
+           <apex:outputText >Average of Basic Salory: {!avrg}</apex:outputText>
+          <apex:outputText >Total No of Salorys Are: {!total}</apex:outputText>
+        </apex:panelGrid>  
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

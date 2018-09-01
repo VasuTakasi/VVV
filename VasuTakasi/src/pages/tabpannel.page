@@ -1,0 +1,39 @@
+<apex:page controller="tabpannel">
+  <apex:form >
+  <apex:outputPanel id="out">
+   <apex:tabPanel selectedTab="acc" reRender="out">
+   
+    <apex:tab label="employees" reRender="oubt">
+    
+      <apex:pageBlock >
+       <apex:pageBlockSection >
+       
+         <apex:pageBlockTable value="{!emprecords}" var="er" id="tbl1">
+         <apex:column >
+             
+         </apex:column>
+          <apex:column headerValue="Employees are">
+           {!er.name}
+          </apex:column>
+         </apex:pageBlockTable>
+         </apex:pageBlockSection>
+      </apex:pageBlock>
+    
+    </apex:tab>
+    <apex:tab label="Accounts are" rendered="true" reRender="hi" id="acc">
+     <apex:pageBlock >
+       <apex:pageBlockSection >
+        <apex:pageblockTable value="{!acc}" var="a" id="hi">
+         <apex:column headerValue="Accounts are">
+          {!a.name}
+         </apex:column>
+        </apex:pageblockTable>
+       </apex:pageBlockSection>
+     </apex:pageBlock>
+      
+    </apex:tab>
+     
+   </apex:tabPanel>
+  </apex:outputPanel>
+  </apex:form>
+</apex:page>

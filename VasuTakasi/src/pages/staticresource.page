@@ -1,0 +1,12 @@
+<apex:page standardController="Employee__c" recordSetVar="ee">
+ <apex:form >
+  <apex:image url="{!URLFOR($Resource.nill,'all/Koala.jpg')}" width="150" height="150"/>
+  <apex:stylesheet value="{!$Resource.css}"/>
+  <h1>hihihihhihihhi</h1>
+<apex:dataTable value="{!ee}" var="em"  styleClass="color">
+<apex:column >
+<apex:inputField value="{!em.name}"/>
+</apex:column>
+</apex:dataTable>
+</apex:form>
+</apex:page>

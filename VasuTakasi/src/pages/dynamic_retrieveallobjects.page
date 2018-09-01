@@ -1,0 +1,10 @@
+<apex:page controller="dynamic_objects">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:selectList multiselect="false" size="1">
+              <apex:selectOptions value="{!allobjects}">
+              </apex:selectOptions>
+          </apex:selectList>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

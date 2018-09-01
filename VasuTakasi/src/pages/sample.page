@@ -1,0 +1,10 @@
+<apex:page standardcontroller="Employee__c" recordsetvar="jj">
+ <apex:form >
+   <h1 style="color:red;">hi this is ur sample eclipse progrm</h1>
+   <apex:pageblock >
+   <apex:pageblocktable value="{!jj}" var="j">
+    <apex:column headervalue="njkn">{!j.name}</apex:column>
+   </apex:pageblocktable>
+   </apex:pageblock>
+ </apex:form>
+</apex:page>

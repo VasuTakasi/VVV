@@ -1,0 +1,15 @@
+<apex:page >
+
+  <script>
+function writetostatus(input){
+//alert(input);
+    window.status=input;
+    return true;
+}
+</script>
+ <apex:form >
+ <apex:outputLink value="http://www.salesforce.com" onmousemove="writetostatus('Search the web!')" onmouseout="writetostatus('')">Google</apex:outputLink>   
+  <!--  <a href="http://www.salesforce.com" onMouseover="writetostatus('Search the web!')"
+onMouseout="writetostatus('')">Google</a>-->
+</apex:form>
+</apex:page>

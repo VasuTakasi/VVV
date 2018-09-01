@@ -1,0 +1,35 @@
+<apex:page >
+ <apex:form >
+ <table>
+ <tr>
+ <td>
+     <apex:selectList multiselect="true" SIze="1" style="width:100px;height:120px;">
+         <apex:selectOption ItemValue="ONE" ></apex:selectOption>
+         <apex:selectOption ItemValue="TWO" ></apex:selectOption>
+         <apex:selectOption ItemValue="THREE"></apex:selectOption>
+         <apex:selectOption ItemValue="FOUR"></apex:selectOption>
+     </apex:selectList>
+ </td>
+ <td align="center">   
+      
+
+         <apex:commandButton value="+"/><br/>
+         <apex:commandButton value="-"/>
+         
+     
+</td>
+<td>
+          <apex:selectList multiselect="true" style="width:100px;height:120px;border-radius:18px;">
+         
+     </apex:selectList>
+</td>
+<td align="center">
+    <apex:panelGrid >
+        <apex:commandButton value="^"/>
+         <apex:commandButton value="v"/>
+     </apex:panelGrid>    
+ </td>
+</tr>     
+</table>
+ </apex:form>
+</apex:page>

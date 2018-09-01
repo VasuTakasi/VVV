@@ -1,0 +1,51 @@
+<apex:page >
+<style>
+.style1
+{
+  margin: 0.5in auto;
+border: 0px solid #fff;
+color: #fff;
+width: 60%;
+height:100px;
+padding: 20px;
+text-align: left;
+background-color: #33F;
+border: 3px solid #fff;
+
+background-image: url(backrepeat.jpg);
+background-repeat: repeat-x;
+
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+}
+.inputForm
+{
+-moz-border-radius:10px; /* Firefox */
+-webkit-border-radius: 10px; /* Safari, Chrome */
+-khtml-border-radius: 10px; /* KHTML */
+border-radius: 10px; /* CSS3 */
+behavior:url("border-radius.htc");
+}
+
+#RightColumn
+{
+background-color:White;
+}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"] ::-webkit-file-upload-button, button {
+-webkit-box-align: center;
+text-align: center;
+cursor: default;
+color: buttontext;
+padding: 2px 6px 3px;
+border: 2px outset buttonface;
+border-image: initial;
+background-color: red;
+box-sizing: border-box;
+}
+</style>
+<div class="style1"></div>
+<div id="RightColumn">
+<input type="text" class="inputForm" />
+<input class="loginButton22" type="submit" id="Login" name="Login" value="Login"/>
+</div>
+</apex:page>

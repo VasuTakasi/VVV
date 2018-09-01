@@ -1,0 +1,16 @@
+<apex:page standardController="account" recordSetVar="acc">
+   <apex:form >
+   <apex:pageBlock title="">
+       <apex:pageBlockTable value="{!acc}" var="a">
+           <apex:column value="{!a.name}"/>
+       </apex:pageBlockTable>
+       <p align="center"  >{!pagenumber}</p>
+       <apex:commandButton value="Next" action="{!next}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <apex:commandButton value="Last" action="{!Last}"/>
+   </apex:pageBlock>
+       <apex:commandLink value="save" reRender="out"/>
+       <apex:outputPanel id="out">
+       
+       </apex:outputPanel>
+   </apex:form>
+</apex:page>

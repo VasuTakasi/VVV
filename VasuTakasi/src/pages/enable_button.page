@@ -1,0 +1,26 @@
+<apex:page >
+    <script type="text/javascript">
+        function show(s,button)
+        {
+            var ss=s.value;
+            //alert(ss);
+            if(ss=='yes')
+            {
+           document.getElementById(button).style.display='block';
+            }
+            else 
+            {
+                document.getElementById(button).style.display='none';
+            }
+        }
+    </script>
+ <apex:form >
+     <apex:selectList size="1" multiselect="false" id="sl" onchange="show(this,'{!$Component.button}')">
+     <apex:selectOption itemLabel="--none--" itemValue="--none--"></apex:selectOption>
+         <apex:selectOption itemLabel="yes" itemValue="yes"></apex:selectOption>
+         <apex:selectOption itemLabel="no" itemValue="no"></apex:selectOption>
+     </apex:selectList>
+     <br/>
+     <apex:commandButton value="Convert" id="button" style="display:none"/>
+ </apex:form>
+</apex:page>

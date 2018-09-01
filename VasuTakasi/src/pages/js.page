@@ -1,0 +1,12 @@
+<apex:page >
+  <script type="text/javascript">
+      function vvv()
+      {
+         //alert('hi welcome');
+         window.open('https://google.com');
+      }
+  </script>
+ <apex:form >
+     <apex:commandButton value="click" onclick="vvv()"/>
+  </apex:form>
+</apex:page>

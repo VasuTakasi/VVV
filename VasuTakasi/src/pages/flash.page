@@ -1,0 +1,3 @@
+<apex:page sidebar="false" showheader="false">
+     <apex:iframe src="http://www.salesforce.com" scrolling="true" id="theIframe" height="400" width="700"/>
+</apex:page>

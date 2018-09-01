@@ -1,0 +1,18 @@
+<apex:page sidebar="false" controller="listviews" id="p1">
+ <script>
+   function fun()
+   {
+       
+     document.getElementById('p1:f1:ipt').value=' ';
+   }
+ </script>
+
+  <apex:form id="f1">
+   <div align="center">  <h2>Enter Nmae:</h2><apex:inputText value="{!empname}" id="ipt"/><br/>
+     <apex:commandButton value="Save" action="{!dosave}" oncomplete="fun()" reRender="lv"/></div>
+  </apex:form>
+   <apex:outputPanel id="lv">
+    <apex:listViews type="Employee__c" />
+    </apex:outputPanel>
+   
+</apex:page>

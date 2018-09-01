@@ -1,0 +1,7 @@
+<apex:page controller="htmlclass">
+  <apex:form >
+   Name:    <input type="text" name="txt1"/><br/>
+   Phone:   <input type="text" name="txt2"/><br/>
+   <apex:commandButton action="{!save}" value="save"/>
+  </apex:form>
+</apex:page>

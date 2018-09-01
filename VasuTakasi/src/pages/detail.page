@@ -1,0 +1,11 @@
+<apex:page standardController="Account">
+ <html>
+ <body>
+ <marquee SCROLLAMOUNT="10" SCROLLDELAY="20" BEHAVIOR="move" DIRECTION="up">
+ <input type="button" value="keka" style="color:red;background-color:black" />
+ </marquee>
+ </body>
+ </html>
+ 
+   <apex:detail subject="{!account.ownerId}" relatedList="false" title="false"/> 
+</apex:page>

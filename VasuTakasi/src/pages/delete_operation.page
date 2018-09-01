@@ -1,0 +1,37 @@
+<apex:page sidebar="false" Controller="delete_operation">
+  <style>
+      .colors
+      {
+          color:Blue;
+      }
+      .header
+      {
+       background-color:white;
+       color:red;
+      }
+      .button
+      {
+          background-color:red;
+          color:red;
+      }
+  </style>  
+    <apex:form style="background-color:#9ACD32">
+       <div>
+           
+              <apex:dataTable value="{!records}" var="r" cellpadding="10" cellspacing="2" id="dt" columnClasses="colors" headerClass="header" align="center">
+               <apex:column headerValue="Action">
+                   <apex:commandButton value="Delete" action="{!remove}" reRender="dt" style="color:red">
+                       <apex:param name="rid" value="{!r.id}" assignTo="{!rid}"/>
+                   </apex:commandButton>
+               </apex:column>   
+               <apex:column headerValue="Name" >
+                   {!r.name}
+               </apex:column>  
+               <apex:column headerValue="Phone">
+                   {!r.Phone__c}
+               </apex:column>  
+             </apex:DataTable>      
+           
+       </div>       
+    </apex:form>
+</apex:page>

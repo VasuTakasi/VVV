@@ -1,0 +1,29 @@
+<apex:page sidebar="false" controller="records">
+ <apex:form id="f1">
+      
+      
+     <apex:pageBlock >
+      <apex:selectList value="{!selobj}" multiselect="false" size="1">
+         <apex:actionSupport event="onchange" action="{!object_results}"/>
+          <apex:selectOption itemValue="--none--"></apex:selectOption>
+          <apex:selectOption itemValue="org1"></apex:selectOption>
+          <apex:selectOption itemValue="org2"></apex:selectOption>
+           
+      </apex:selectList>
+      
+       <apex:pageBlockTable value="{!org_list1}" var="records">
+             <apex:column value="{!records.name}"/>
+             
+             
+            
+           </apex:pageBlockTable>
+        
+           
+         <apex:pageBlockTable value="{!org_list2}" var="records">
+             <apex:column value="{!records.lastname}"/> >
+             
+              
+            </apex:pageBlockTable>
+            </apex:pageblock>
+            </apex:form>
+            </apex:page>

@@ -1,0 +1,9 @@
+<apex:page standardController="account">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+              <apex:outputField value="{!account.name}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

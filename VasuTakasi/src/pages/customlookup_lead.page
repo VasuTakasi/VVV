@@ -1,0 +1,17 @@
+<apex:page controller="customlookup_lead" id="Page">
+    <script type="text/javascript">
+        function lookup()
+        {
+            window.close();
+        }
+    </script>
+  <apex:form id="myForm" onclick="window.open('/apex/close_window','','width=600,height=600')">
+      <apex:pageBlock id="PageBlock">
+          <apex:pageBlockSection >
+             
+         </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+  <apex:form >
+   <apex:inputtext /></apex:form>
+</apex:page>

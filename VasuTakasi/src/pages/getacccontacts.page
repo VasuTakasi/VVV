@@ -1,0 +1,24 @@
+<apex:page controller="ac" showHeader="false" sidebar="false">
+<apex:form >
+
+<apex:pageBlock >
+<apex:pageBlockSection title="account details">
+<apex:pageBlockTable value="{!ac}" var="b" id="list" >
+<apex:column >
+<apex:commandLink action="{!save}">
+{!b.name}
+<apex:param name="aid" value="{!b.id}" assignTo="{!aid}"/>
+</apex:commandLink>
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="contacts"> 
+<apex:pageBlockTable value="{!conts}" var="a"> 
+ <apex:column value="{!a.firstName}" />
+<apex:column value="{!a.lastName}" />
+    </apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+  </apex:page>

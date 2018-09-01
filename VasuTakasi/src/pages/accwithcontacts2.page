@@ -1,0 +1,36 @@
+<apex:page sidebar="false" controller="accwithcontacts2">
+ <apex:form >
+ 
+     <apex:inputText value="{!accname}"/>
+    <apex:commandButton value="showcontacts" action="{!showcontacts}" reRender="out" status="wait" style="color:green;" /><br/>
+  
+     <apex:actionStatus id="wait" startText="Just wait...."  >
+    
+     <apex:facet name="start">
+      <apex:outputPanel >
+      <apex:image value="{!$Resource.loading_Image}"/>
+      <p style="color:#1E90FF;font-style:bold;">Loading...........</p>
+      </apex:outputPanel>
+     </apex:facet>
+      <apex:facet name="stop">
+     
+        <apex:outputPanel id="out">
+        
+        <apex:pageBlock >
+        <apex:repeat value="{!acc_conts}" var="r">
+          
+         <apex:pageBlockTable value="{!r}" var="ac" rendered="{!(r.size!= 0)}" >
+       
+          <apex:column headerValue="contacts">
+             {!ac.name}
+           </apex:column>
+          </apex:pageBlockTable>
+          <apex:outputText rendered="{!(r.size = 0)}" value=" no contacts found" style="color:red;font-size:38;" />
+         </apex:repeat>
+         </apex:pageBlock>
+        </apex:outputPanel>
+       </apex:facet>
+     </apex:actionStatus>
+  
+ </apex:form>
+</apex:page>

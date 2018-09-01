@@ -1,0 +1,26 @@
+<apex:page id="P1" standardController="Employee__c" >
+
+    <apex:form id="F1" >
+    <apex:sectionHeader title="Employee" subtitle="{!Employee__c.name}" />
+
+    <apex:PageBlock id="PB1">
+        <apex:pageMessages />
+
+        <apex:pageBlockButtons id="PBB" location="both">
+            <apex:commandButton id="inlineEditSave"   value="Save"   action="{!save}"   style="display:none"/>
+            <apex:commandButton id="inlineEditCancel" value="Cancel" action="{!cancel}" style="display:none"/>
+            <apex:commandButton id="editButton"       value="Edit"   action="{!edit}"/>
+            <apex:commandButton id="deleteButton"     value="Delete" action="{!delete}" onclick="if ((Modal.confirm && Modal.confirm('Are you sure?')) || (!Modal.confirm && window.confirm('Are you sure?'))) {return true;} else {return false;}"/>
+        </apex:pageBlockButtons>
+
+        <apex:pageBlockSection id="PBS" title="Details" columns="2">
+        <apex:inlineEditSupport event="ondblclick" showOnEdit="inlineEditSave,inlineEditCancel" hideOnEdit="deleteButton,editButton" resetFunction="resetInlineEdit"/>
+            <apex:outputField id="cli02" value="{!Employee__c.Phone__c}"/>     
+            <apex:outputField id="cli03" value="{!Employee__c.Email__c}"/>     
+            <apex:outputField id="cli04" value="{!Employee__c.name}"/>     
+            <apex:outputField id="clp01" value="{!Employee__c.Designation__c}"/> 
+        </apex:pageBlockSection>
+
+    </apex:PageBlock>
+    </apex:form>
+</apex:page>

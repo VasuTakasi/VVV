@@ -1,0 +1,18 @@
+<apex:page standardController="account" recordSetVar="accounts" sidebar="false">
+  <apex:form >
+      <apex:pageblock >
+          <apex:repeat value="{!accounts}" var="acc">
+              <apex:pageBlockSection title="Account:- {!acc.name}" columns="1">
+              <apex:pageblockTable title="{!acc.name}" value="{!acc.contacts}" var="a" >
+                  <apex:column value="{!a.name}"/>
+                  <apex:column value="{!a.phone}"/>
+              </apex:pageblockTable>
+              </apex:pageBlockSection>
+          </apex:repeat>
+      </apex:pageblock>
+      <apex:commandButton value="first" action="{!first}"/>
+      <apex:commandButton value="next" action="{!next}"/>
+      <apex:commandButton value="prev" action="{!previous}"/>
+      <apex:commandButton value="last" action="{!last}"/>
+  </apex:form>
+</apex:page>

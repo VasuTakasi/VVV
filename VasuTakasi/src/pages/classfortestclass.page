@@ -1,0 +1,11 @@
+<apex:page controller="classfortestclass">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockTable value="{!gettestclassmethod}" var="L">
+                <apex:column value="{!L.Name}"/>
+                <apex:column value="{!L.Status}"/>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+
+    </apex:form>
+</apex:page>

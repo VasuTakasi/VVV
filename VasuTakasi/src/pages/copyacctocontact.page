@@ -1,0 +1,14 @@
+<apex:page sidebar="false" standardController="contact" extensions="copyacctocont">
+     <apex:form >
+         <apex:actionFunction name="populatefields" action="{!copyfields}"/>
+      <apex:pageBlock >
+          <apex:pageBlockSection columns="1">
+              <apex:inputfield value="{!cont.AccountId}" onchange="populatefields()"/>
+              <apex:inputfield value="{!cont.Mailingcity}"/>
+              <apex:inputfield value="{!cont.Mailingcountry}"/>
+              <apex:inputfield value="{!cont.Mailingpostalcode}"/>
+              <apex:inputfield value="{!cont.Mailingstate}"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+     </apex:form>
+</apex:page>

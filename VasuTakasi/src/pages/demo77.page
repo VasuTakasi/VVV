@@ -1,0 +1,22 @@
+<apex:page standardController="contact"  extensions="TestForBlog">
+  <apex:form >
+    <script>
+      function populateFieldsjs()
+      {
+        document.getElementById('{!$Component.hiddenfieldid}').value = document.getElementById('{!$Component.name}').value;
+       
+        ActionFunctionAjax();
+      }
+    </script>
+
+<apex:actionFunction id="ActionFunctionAjax" action="{!SomeFunction}" reRender="ReRenderMe" name="st"/>
+<apex:outputPanel id="ReRenderMe">
+
+<apex:inputHidden value="{!SomeString}" id="hiddenfieldid"/>
+
+    <apex:inputField value="{!contact.accountid}" id="name"/>
+    <apex:inputField value="{!contact.name}" />
+     
+<a href="#" onclick="populateFieldsjs()">Run Javascript</a></apex:outputPanel>
+  </apex:form>
+</apex:page>

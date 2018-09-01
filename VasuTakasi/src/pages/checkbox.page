@@ -1,0 +1,23 @@
+<apex:page sidebar="false" id="p1">
+ <script>
+  function show()
+  {
+   var checkstatus=document.getElementById('p1:f1:ck1').checked;
+   alert(checkstatus);
+   if(checkstatus)
+   {
+    document.getElementById('p1:f1:out').style.display="block"; 
+   }else
+   {
+    document.getElementById('p1:f1:out').style.display="none";
+   }
+  }
+ </script>
+ <apex:form id="f1">
+  <apex:inputCheckbox id="ck1" onclick="show()"/><br/>
+   <apex:outputPanel id="out" style="display:none; margin:5px;background-color:lightblue;border-style:dotted;margin-right:630px;margin-left:100px">
+    Name:<apex:inputText /><br/>
+    Age:<apex:inputText />
+   </apex:outputPanel>
+ </apex:form> 
+</apex:page>

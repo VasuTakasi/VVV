@@ -1,0 +1,63 @@
+<apex:page >
+    <script src="/soap/ajax/18.0/connection.js"></script>
+    <script type="text/javascript">
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+        window.onload=allAccountRecords;
+        function allAccountRecords()
+        {
+            var accounts=sforce.connection.query("select id,name,phone from Account where phone!=null");
+            var allaccounts=accounts.getArray('records');              
+            var myTable = document.getElementById('tableId');
+            var tBody = myTable.getElementsByTagName('tbody')[0];   
+            
+            var i=0;
+            for(var j=0;j<allaccounts.length;i++)
+            {
+                var newTR = document.createElement('tr');
+                newTR.id= "tablerow"+i;
+                var newTD1 = document.createElement('td');
+                newTD1.innerHTML = '<span>'+allaccounts[i].Id+'</span>';
+                newTR.appendChild (newTD1);
+                
+                var newTD1 = document.createElement('td');
+                newTD1.innerHTML = '<span>'+allaccounts[i].Name+'</span>';
+                newTR.appendChild (newTD1);
+                
+                var newTD1 = document.createElement('td');
+                newTD1.innerHTML = '<span>'+allaccounts[i].Phone+'</span>';
+                newTR.appendChild (newTD1);
+                
+                tBody.appendChild(newTR);
+                i++;
+            }            
+        }    
+        function insertAccount()
+        {
+            var accountname=document.getElementById("accname").value;
+            var accountphone=document.getElementById("accphone").value;
+           
+            var account = new sforce.SObject("Account");
+            
+            account.Name = accountname;
+            
+            account.Phone = accountphone;
+           
+            var result = sforce.connection.create([account]);
+            allAccountRecords();          
+        }
+    </script>
+    <label>Account Name</label>    
+    <input type="text" id="accname"/><br/>
+    <label>Account Phone</label>
+    <input type="text" id="accphone"/><br/>
+    <input type="button" value="Submit" onclick="insertAccount()"/>
+    <table id="tableId" border="1">
+        <tbody>
+            <tr>
+                <th>Account Id</th>
+                <th>Account Name</th>
+                <th>Account Phone</th>
+            </tr>
+        </tbody>
+    </table>
+</apex:page>

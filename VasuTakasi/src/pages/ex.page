@@ -1,0 +1,15 @@
+<apex:page controller="ex">
+  <apex:form id="f1">
+  
+      <apex:pageBlock >
+      <apex:pageBlockSection >
+      <apex:inputText label="enter account name" value="{!name}"/>
+      </apex:pageBlockSection>
+          <apex:pageBlockTable value="{!acc_list}" var="acc">
+              <apex:column value="{!acc.name}"/>
+          </apex:pageBlockTable>
+      </apex:pageBlock>
+      <apex:commandButton value="show" action="{!shows}" reRender="f1"/>
+      <apex:commandButton value="clear" action="{!clear}" reRender="f1"/>
+      </apex:form>
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page standardController="contact" recordSetVar="acc">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockTable value="{!acc}" var="a">
+              <apex:column value="{!a.name}"/>
+              <apex:column value="{!a.phone}"/>            
+          </apex:pageBlockTable>
+       <apex:pageBlockTable value="{!contact}" var="ac">
+           <apex:column value="{!contact.accountid}"/>
+       </apex:pageBlockTable>   
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

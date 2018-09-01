@@ -1,0 +1,37 @@
+<apex:page >
+
+  <style>
+    #progress_bar {  
+    width:102px;  
+    height:7px;  
+    border:1px solid #ccc;  
+    padding:0;  
+    margin:0;  
+    position:relative;  
+    background-image:url("http://t3.gstatic.com/images?q=tbn:ANd9GcTeSY76XGCcBeonLjzjG-_3EKvGBopKaoQc9UmU3JWfVAWUz4bveEx3MDMYNA");  
+    background-repeat:repeat-x;  
+} 
+ 
+#progress_bar div {  
+    background-color:#fff;  
+}  
+  </style>
+     <script>
+       var progress_bar = new Control.ProgressBar('progress_bar',{  
+    interval: 0.15  
+});  
+$('progress_bar_stop').observe('click',progress_bar.stop.bind(progress_bar));  
+$('progress_bar_start').observe('click',progress_bar.start.bind(progress_bar));  
+$('progress_bar_reset').observe('click',progress_bar.reset.bind(progress_bar));  
+$('progress_bar_step_5').observe('click',progress_bar.step.bind(progress_bar,5));  
+$('progress_bar_step_25').observe('click',progress_bar.step.bind(progress_bar,25));  
+     </script>
+  <div id="progress_bar"></div>  
+<div style="margin-top:10px;">  
+    <input type="button" value="Start" id="progress_bar_start"/>  
+    <input type="button" value="Stop" id="progress_bar_stop"/>  
+    <input type="button" value="Reset" id="progress_bar_reset"/>  
+    <input type="button" value="+ 5%" id="progress_bar_step_5"/>  
+    <input type="button" value="+ 25%" id="progress_bar_step_25"/>  
+</div>  
+</apex:page>

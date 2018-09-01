@@ -1,0 +1,34 @@
+<apex:page standardController="account">
+<apex:form >
+       <apex:image url="{!$Resource.red_flower}" width="50" height="50" />
+    <div style="z-index:10;position:absolute;top:0px;left:300px;">
+         <p>Account</p>
+        <p style="font-size:20px">{!account.Name}</p>
+    </div>
+             <apex:pageBlock title="Account Detail">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="edit" action="{!edit}"/>
+                 <apex:commandButton value="delete" action="{!delete}"/>
+                 </apex:pageBlockButtons>
+                 
+                 <apex:pageBlockSection columns="2">
+                 <apex:outputtext value="{!account.Owner}"/>
+                 <apex:outputField value="{!account.Rating}"/>
+                 <apex:outputField value="{!account.Name}"/>
+                 <apex:outputField value="{!account.Phone}"/>
+                 <apex:outputText value="{!account.Parent}"/>
+                 <apex:outputField value="{!account.Fax}"/>
+                 <apex:outputField value="{!account.AccountNumber}"/>
+                 <apex:outputField value="{!account.Website}"/>
+                 <apex:outputField value="{!account.Site}"/>
+                 <apex:outputField value="{!account.TickerSymbol}"/>
+                 </apex:pageBlockSection>
+                 
+                 
+            
+             </apex:pageBlock>
+             
+</apex:form>
+
+ <!-- <apex:detail subject="{!account}"/>-->
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page standardController="Employee__c" recordSetVar="ee">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockTable value="{!ee}" var="e">
+        <apex:column headerValue="name">
+          <apex:outputLink value="https://ap1.salesforce.com/{!e.id}/p?retURL=/{!e.id}">
+            {!e.name}
+          </apex:outputLink>
+        </apex:column>
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

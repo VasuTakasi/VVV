@@ -1,0 +1,11 @@
+<apex:page controller="merge_duplicate_records">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockTable value="{!salorys}" var="s">
+              <apex:column value="{!s.name}"/>
+              <apex:column value="{!s.Basic__c}"/>
+          </apex:pageBlockTable>
+                    <apex:commandButton value="merge" action="{!mergerecords}"/>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

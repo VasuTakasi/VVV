@@ -1,0 +1,35 @@
+<apex:page standardController="campaign" sidebar="false" extensions="classcampaign">
+ <apex:form >
+   <apex:pageBlock title="User Driven Campaigns" >
+          View:<apex:selectList size="1" value="{!listvalue}">
+               <apex:actionSupport event="onchange" reRender="out" status="mystatus"/>
+                   <apex:selectOption itemValue="RecentlyModified"></apex:selectOption>
+                   <apex:selectOption itemValue="All Campaigns"></apex:selectOption>
+                   <apex:selectOption itemValue="All ActiveCampaigns"  ></apex:selectOption>
+                   <apex:selectOption itemValue="My Active Campaigns"></apex:selectOption>
+                   <apex:selectOption itemValue="Inactive Campaigns"></apex:selectOption>
+      
+               </apex:selectList>
+       <apex:actionStatus id="mystatus" startText="loading pleese waight.................">  
+    <apex:facet name="stop">
+   <apex:outputPanel id="out">
+  
+    <apex:pageBlockTable value="{!camptab}" var="c" id="table">
+       <apex:column headerValue="Name">
+         <apex:commandLink action="{!passid}" >
+             {!c.name}
+          <apex:param value="{!c.id}" assignTo="{!cid}" name="cid"/>   
+         </apex:commandLink>
+       </apex:column>
+       <apex:column headerValue="Status">{!c.status}</apex:column>
+       <apex:column headerValue="Type">{!c.type}</apex:column>
+       <apex:column headerValue="StartDate">{!c.startdate}</apex:column>
+   </apex:pageBlockTable>
+    </apex:outputPanel>
+   </apex:facet>
+   
+   </apex:actionStatus>
+  
+   </apex:pageBlock>
+ </apex:form>
+</apex:page>

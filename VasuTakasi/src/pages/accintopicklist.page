@@ -1,0 +1,9 @@
+<apex:page sidebar="false" controller="accintopicklist" >
+  <apex:form >
+   <apex:selectList size="1" multiselect="false"   >
+    <apex:selectOptions value="{!empnames}" >
+   
+    </apex:selectOptions>
+   </apex:selectList>
+  </apex:form>
+</apex:page>
