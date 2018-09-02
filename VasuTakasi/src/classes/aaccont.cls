@@ -13,7 +13,7 @@ public with sharing class aaccont {
                accid.add(a.accountid);         
             }         
          }
-             aq=[select name from account where id in :accid];
+        aq=[select name from account where id in :accid];
         return aq;
     }
     }
